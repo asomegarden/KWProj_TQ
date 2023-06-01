@@ -19,6 +19,7 @@ namespace client
         {
             //this.SuspendLayout();
             InitializeComponent();
+            TryConnectServer();
         }
         
         protected Client client;
@@ -292,7 +293,7 @@ namespace client
         /// </summary>
         protected void TryConnectServer(string serverIP)
         {
-            if(client == null) client = new Client(this, serverIP);
+            if(client == null) client = new Client(this);
 
             if (client.Activate)
             {
@@ -300,8 +301,48 @@ namespace client
             }
             else
             {
-                client.ServerIP = IPAddress.Parse(serverIP);
-                client.Start();
+                ConnectServerResult(client.Start(IPAddress.Parse(serverIP)));
+            }
+        }
+
+        private void TryConnectServer()
+        {
+            client = new Client(this);
+            List<IPAddress> ipList = LoadAllServerIp("MyServerIp.txt");
+
+            if(ipList.Count > 0){
+                for(int i=0; i<ipList.Count; i++){
+                    client.ServerIP = ipList[i];
+                    if(client.Start(ipList[i])){
+                        parentForm.ConnectServerResult(true);
+                        return;
+                    }
+                }
+            }
+            parentForm.ConnectServerResult(false);
+        }
+
+        private List<IPAddress> LoadAllServerIp(string filePath)
+        {
+            List<IPAddress> ipList = new List<IPAddress>();
+
+            try
+            {
+                string[] lines = File.ReadAllLines(filePath);
+
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    if (IPAddress.TryParse(lines[i], out IPAddress ip))
+                    {
+                        ipList.Add(ip);
+                    }
+                }
+
+                return ipList;
+            }
+            catch (Exception ex)
+            {
+                return ipList;
             }
         }
 
