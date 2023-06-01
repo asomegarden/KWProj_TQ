@@ -308,7 +308,7 @@ namespace client
         protected void TryConnectServer()
         {
             client = new Client(this);
-            List<IPAddress> ipList = LoadAllServerIp("MyServerIp.txt");
+            List<IPAddress> ipList = LoadAllServerIp("MyServerIP.txt");
 
             if(ipList.Count > 0){
                 for(int i=0; i<ipList.Count; i++){
@@ -326,6 +326,10 @@ namespace client
         {
             List<IPAddress> ipList = new List<IPAddress>();
 
+            if (!File.Exists(filePath))
+            {
+                File.WriteAllText(filePath, "고정 서버 ip 주소를 입력. 우선순위에 따라 위에서부터 작성\n127.0.0.1");
+            }
             try
             {
                 string[] lines = File.ReadAllLines(filePath);
@@ -340,7 +344,7 @@ namespace client
 
                 return ipList;
             }
-            catch (Exception ex)
+            catch
             {
                 return ipList;
             }

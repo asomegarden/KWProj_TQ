@@ -207,8 +207,6 @@ namespace client
             p8_friend_dgv.Font = font_14;
             p8_friend_dgv.DefaultCellStyle.Font = font_14; //셀 내부
             #endregion
-
-            TryConnectServer();
         }
 
         /// <summary>
@@ -2470,6 +2468,11 @@ namespace client
         private void panel5_Owner_VisibleChanged(object sender, EventArgs e)
         {
             this.ActiveControl = p5_message_tbx;    // 커서 포커싱 설정
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            TryConnectServer();
         }
 
 
