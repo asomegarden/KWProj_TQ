@@ -50,25 +50,23 @@ namespace client
         }
 
         //서버와 접속을 시작한다.
-        public bool Start(IPAddress newServerIp)
+        public void Start()
         {
             try
             {
-                serverIP = newServerIp;
-                
                 //만약 입력된 IP가 127.0.0.1 이면 로컬 연결이므로 clientIP, serverIP 모두 127.0.0.1로
                 IPAddress clientIP = IPAddress.Parse("127.0.0.1");
                 if (!serverIP.ToString().Equals("127.0.0.1")) clientIP = IPAddress.Parse(GetMyIP());
-                
+
                 //서버에 내 IP를 보냄. 딱히 쓰이는 곳은 없고 로그 출력할 때만 쓰임
                 TcpClient client = new TcpClient();
                 client.Connect(serverIP, 5000);
                 swriter = new StreamWriter(client.GetStream());
-                swriter.WriteLine(clientIP); 
-               
+                swriter.WriteLine(clientIP);
+
 
                 //서버-클라이언트 연결 시작
-                
+
                 sreader = new StreamReader(client.GetStream());
                 swriter.AutoFlush = true;
 
@@ -78,17 +76,15 @@ namespace client
 
                 activate = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                activate = false;
                 //parentForm.ShowMessageBox("서버 연결 실패", "Fail", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-                //parentForm.ShowMessageBox(ex.Message, "Fail", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                parentForm.ShowMessageBox(ex.Message, "Fail", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
             finally
             {
                 //서버 연결 성공 여부를 전달
-                return activate;
-                //parentForm.ConnectServerResult(activate);
+                parentForm.ConnectServerResult(activate);
             }
         }
 
@@ -130,7 +126,8 @@ namespace client
             else if (header.Equals("SIGNUP"))
             {
                 parentForm.SignUp(content.Equals("1"));
-            }else if (header.Equals("SIGNOUT"))
+            }
+            else if (header.Equals("SIGNOUT"))
             {
                 parentForm.SignOut();
             }
@@ -182,7 +179,7 @@ namespace client
             else if (header.Equals("PLAYERLIST"))
             {
                 // 받아 온 content가 비어있지 않다면, 접속된 유저 이름 가져옴
-                if(string.IsNullOrEmpty(content) == false)
+                if (string.IsNullOrEmpty(content) == false)
                 {
                     string[] playerArr = content.Split(',');
                     parentForm.PlayerList(playerArr.ToList());
@@ -191,13 +188,16 @@ namespace client
             else if (header.Equals("SENDFRIENDREQUEST"))
             {
                 parentForm.SendFriendRequest(!content.Equals("-1"));
-            }else if (header.Equals("FRIENDREQUEST"))
+            }
+            else if (header.Equals("FRIENDREQUEST"))
             {
                 parentForm.FriendRequest(content);
-            }else if (header.Equals("ACCEPTFRIEND"))
+            }
+            else if (header.Equals("ACCEPTFRIEND"))
             {
                 parentForm.AcceptFriend(!content.Equals("-1"));
-            }else if (header.Equals("FRIENDSLIST"))
+            }
+            else if (header.Equals("FRIENDSLIST"))
             {
                 if (content == string.Empty) parentForm.FriendList(new List<string>());
                 else
@@ -220,7 +220,8 @@ namespace client
                 {
                     parentForm.GameStartFail();
                 }
-            }else if (header.Equals("GAMEREADY"))
+            }
+            else if (header.Equals("GAMEREADY"))
             {
                 parentForm.GameReady(content.Equals("1"));
             }
@@ -285,7 +286,8 @@ namespace client
                 {
                     parentForm.LockByBuzzer();
                 }
-                else if (content.Equals("UNLOCKBUZZER")){
+                else if (content.Equals("UNLOCKBUZZER"))
+                {
                     parentForm.UnlockByBuzzer();
                 }
             }

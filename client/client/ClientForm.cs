@@ -14,13 +14,13 @@ namespace client
 {
     public partial class ClientForm : MetroFramework.Forms.MetroForm
     {
-        
+
         public ClientForm()
         {
             //this.SuspendLayout();
             InitializeComponent();
         }
-        
+
         protected Client client;
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace client
         /// </summary>
         public virtual void OwnerWait()
         {
-            
+
         }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace client
 
         }
 
-  
+
 
         /// <summary>
         /// 게임 시작 후 출제자가 제시어를 정하는 화면 RequestWordSelect() 요청을 보낼 수 있는 버튼이 존재해야한다.
@@ -281,7 +281,7 @@ namespace client
         /// <summary>
         ///  MessageBox를 보여준다. override 불필요
         /// </summary>
-        public void ShowMessageBox(string msg,string caption,MessageBoxButtons btn, MessageBoxIcon icon)
+        public void ShowMessageBox(string msg, string caption, MessageBoxButtons btn, MessageBoxIcon icon)
         {
             MessageBox.Show(msg, caption, btn, icon);
         }
@@ -292,7 +292,7 @@ namespace client
         /// </summary>
         protected void TryConnectServer(string serverIP)
         {
-            if(client == null) client = new Client(this);
+            if (client == null) client = new Client(this, serverIP);
 
             if (client.Activate)
             {
@@ -300,48 +300,8 @@ namespace client
             }
             else
             {
-                ConnectServerResult(client.Start(IPAddress.Parse(serverIP)));
-            }
-        }
-
-        protected void TryConnectServer()
-        {
-            client = new Client(this);
-            List<IPAddress> ipList = LoadAllServerIp("MyServerIp.txt");
-
-            if(ipList.Count > 0){
-                for(int i=0; i<ipList.Count; i++){
-                    client.ServerIP = ipList[i];
-                    if(client.Start(ipList[i])){
-                        parentForm.ConnectServerResult(true);
-                        return;
-                    }
-                }
-            }
-            parentForm.ConnectServerResult(false);
-        }
-
-        private List<IPAddress> LoadAllServerIp(string filePath)
-        {
-            List<IPAddress> ipList = new List<IPAddress>();
-
-            try
-            {
-                string[] lines = File.ReadAllLines(filePath);
-
-                for (int i = 0; i < lines.Length; i++)
-                {
-                    if (IPAddress.TryParse(lines[i], out IPAddress ip))
-                    {
-                        ipList.Add(ip);
-                    }
-                }
-
-                return ipList;
-            }
-            catch (Exception ex)
-            {
-                return ipList;
+                client.ServerIP = IPAddress.Parse(serverIP);
+                client.Start();
             }
         }
 

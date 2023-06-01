@@ -208,7 +208,7 @@ namespace client
             p8_friend_dgv.DefaultCellStyle.Font = font_14; //셀 내부
             #endregion
 
-            TryConnectServer();
+            //TryConnectServer();
         }
 
         /// <summary>
