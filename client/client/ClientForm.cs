@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace client
 {
@@ -300,8 +301,52 @@ namespace client
             }
             else
             {
-                client.ServerIP = IPAddress.Parse(serverIP);
-                client.Start();
+                ConnectServerResult(client.Start(IPAddress.Parse(serverIP)));
+            }
+        }
+
+        protected void TryConnectServer()
+        {
+            client = new Client(this);
+            List<IPAddress> ipList = LoadAllServerIp("MyServerIP.txt");
+
+            if(ipList.Count > 0){
+                for(int i=0; i<ipList.Count; i++){
+                    client.ServerIP = ipList[i];
+                    if(client.Start(ipList[i])){
+                        client.parentForm.ConnectServerResult(true);
+                        return;
+                    }
+                }
+            }
+            client.parentForm.ConnectServerResult(false);
+        }
+
+        private List<IPAddress> LoadAllServerIp(string filePath)
+        {
+            List<IPAddress> ipList = new List<IPAddress>();
+
+            if (!File.Exists(filePath))
+            {
+                File.WriteAllText(filePath, "고정 서버 ip 주소를 입력. 우선순위에 따라 위에서부터 작성\n127.0.0.1");
+            }
+            try
+            {
+                string[] lines = File.ReadAllLines(filePath);
+
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    if (IPAddress.TryParse(lines[i], out IPAddress ip))
+                    {
+                        ipList.Add(ip);
+                    }
+                }
+
+                return ipList;
+            }
+            catch
+            {
+                return ipList;
             }
         }
 
