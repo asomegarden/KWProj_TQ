@@ -15,13 +15,13 @@ namespace client
 {
     public partial class ClientForm : MetroFramework.Forms.MetroForm
     {
-        
+
         public ClientForm()
         {
             //this.SuspendLayout();
             InitializeComponent();
         }
-        
+
         protected Client client;
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace client
         /// </summary>
         public virtual void OwnerWait()
         {
-            
+
         }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace client
 
         }
 
-  
+
 
         /// <summary>
         /// 게임 시작 후 출제자가 제시어를 정하는 화면 RequestWordSelect() 요청을 보낼 수 있는 버튼이 존재해야한다.
@@ -282,7 +282,7 @@ namespace client
         /// <summary>
         ///  MessageBox를 보여준다. override 불필요
         /// </summary>
-        public void ShowMessageBox(string msg,string caption,MessageBoxButtons btn, MessageBoxIcon icon)
+        public void ShowMessageBox(string msg, string caption, MessageBoxButtons btn, MessageBoxIcon icon)
         {
             MessageBox.Show(msg, caption, btn, icon);
         }
@@ -293,7 +293,7 @@ namespace client
         /// </summary>
         protected void TryConnectServer(string serverIP)
         {
-            if(client == null) client = new Client(this);
+            if (client == null) client = new Client(this);
 
             if (client.Activate)
             {
@@ -308,7 +308,7 @@ namespace client
         protected void TryConnectServer()
         {
             client = new Client(this);
-            List<IPAddress> ipList = LoadAllServerIp("MyServerIp.txt");
+            List<IPAddress> ipList = LoadAllServerIp("MyServerIP.txt");
 
             if(ipList.Count > 0){
                 for(int i=0; i<ipList.Count; i++){
@@ -326,6 +326,10 @@ namespace client
         {
             List<IPAddress> ipList = new List<IPAddress>();
 
+            if (!File.Exists(filePath))
+            {
+                File.WriteAllText(filePath, "고정 서버 ip 주소를 입력. 우선순위에 따라 위에서부터 작성\n127.0.0.1");
+            }
             try
             {
                 string[] lines = File.ReadAllLines(filePath);
@@ -340,7 +344,7 @@ namespace client
 
                 return ipList;
             }
-            catch (Exception ex)
+            catch
             {
                 return ipList;
             }

@@ -207,8 +207,6 @@ namespace client
             p8_friend_dgv.Font = font_14;
             p8_friend_dgv.DefaultCellStyle.Font = font_14; //셀 내부
             #endregion
-
-            TryConnectServer();
         }
 
         /// <summary>
@@ -1446,6 +1444,9 @@ namespace client
 
             if (panel4_1_owner_waitRoom.Visible == true)
             {
+                this.ActiveControl = p4_1_message_tbx;  // 마우스 커서 설정
+                p4_1_chat_tbx.Enabled = false;      // 채팅창 입력 안되도록 변경
+
                 p4_1_state_player2.Invoke(new MethodInvoker(delegate { p4_1_state_player2.Text = "대기 중"; }));
                 p4_1_state_player3.Invoke(new MethodInvoker(delegate { p4_1_state_player3.Text = "대기 중"; }));
                 p4_1_state_player4.Invoke(new MethodInvoker(delegate { p4_1_state_player4.Text = "대기 중"; }));
@@ -1609,6 +1610,8 @@ namespace client
         {
             if(panel4_player_waitRoom.Visible == true)
             {
+                this.ActiveControl = p4_message_tbx;
+                p4_chat_tbx.Enabled = false;
                 p4_ready_btn.Invoke(new MethodInvoker(delegate { p4_ready_btn.Visible = true; }));
                 p4_w_state_player2.Invoke(new MethodInvoker(delegate { p4_w_state_player2.Text = "대기 중"; }));
                 p4_w_state_player3.Invoke(new MethodInvoker(delegate { p4_w_state_player3.Text = "대기 중"; }));
@@ -2472,6 +2475,27 @@ namespace client
             this.ActiveControl = p5_message_tbx;    // 커서 포커싱 설정
         }
 
+        private void panel5_2_Owner_Wait_VisibleChanged(object sender, EventArgs e)
+        {
+            p5_2_QA_tbx.Enabled = false;    // 채팅창 커서 입력 안되게 막음
+        }
+
+        private void panel5_1_Owner_Answer_VisibleChanged(object sender, EventArgs e)
+        {
+            p5_1_QA_tbx.Enabled = false;
+        }
+
+        private void panel6_2_Answer_Wait_VisibleChanged(object sender, EventArgs e)
+        {
+            this.ActiveControl = p6_2_answer_tbx;
+            p6_2_QA_tbx.Enabled = false;
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            TryConnectServer();
+        }
+
 
 
 
@@ -2530,6 +2554,7 @@ namespace client
             p6_answer_tbx.ReadOnly = true;
 
             this.ActiveControl = p6_answer_tbx; // 커서 포커싱 설정
+            p6_QA_tbx.Enabled = false;
         }
 
         private void p6_send_btn_Click(object sender, EventArgs e)
