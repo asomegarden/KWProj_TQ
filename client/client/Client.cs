@@ -19,17 +19,15 @@ namespace client
         private StreamReader sreader;
         private StreamWriter swriter;
 
-        private ClientForm parentForm;
+        public ClientForm parentForm;
 
         public string username = "None";
         private bool activate = false;
         public bool Activate { get { return activate; } } //현재 클라이언트가 서버와 접속중인지
 
-        public Client(ClientForm parentForm, string serverIPString)
+        public Client(ClientForm parentForm)
         {
-            this.serverIP = IPAddress.Parse(serverIPString);
             this.parentForm = parentForm;
-
         }
 
         //실행하는 컴퓨터의 ip 주소를 반환
@@ -50,10 +48,12 @@ namespace client
         }
 
         //서버와 접속을 시작한다.
-        public void Start()
+        public bool Start(IPAddress newServerIp)
         {
             try
             {
+                serverIP = newServerIp;
+
                 //만약 입력된 IP가 127.0.0.1 이면 로컬 연결이므로 clientIP, serverIP 모두 127.0.0.1로
                 IPAddress clientIP = IPAddress.Parse("127.0.0.1");
                 if (!serverIP.ToString().Equals("127.0.0.1")) clientIP = IPAddress.Parse(GetMyIP());
@@ -78,14 +78,9 @@ namespace client
             }
             catch (Exception ex)
             {
-                //parentForm.ShowMessageBox("서버 연결 실패", "Fail", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-                parentForm.ShowMessageBox(ex.Message, "Fail", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                activate = false;
             }
-            finally
-            {
-                //서버 연결 성공 여부를 전달
-                parentForm.ConnectServerResult(activate);
-            }
+            return activate;
         }
 
         //서버에 요청을 보낸다.

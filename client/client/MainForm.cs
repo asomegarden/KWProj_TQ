@@ -207,8 +207,6 @@ namespace client
             p8_friend_dgv.Font = font_14;
             p8_friend_dgv.DefaultCellStyle.Font = font_14; //셀 내부
             #endregion
-
-            //TryConnectServer();
         }
 
         /// <summary>
@@ -2491,6 +2489,11 @@ namespace client
         {
             this.ActiveControl = p6_2_answer_tbx;
             p6_2_QA_tbx.Enabled = false;
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            TryConnectServer();
         }
 
 
