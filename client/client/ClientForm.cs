@@ -293,7 +293,7 @@ namespace client
         /// </summary>
         protected void TryConnectServer(string serverIP)
         {
-            if (client == null) client = new Client(this, serverIP);
+            if (client == null) client = new Client(this);
 
             if (client.Activate)
             {
