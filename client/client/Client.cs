@@ -8,6 +8,8 @@ using System.Net.Sockets;
 using System.Threading;
 using System.IO;
 using System.Security.Policy;
+using System.Runtime.InteropServices.ComTypes;
+using System.Drawing;
 
 namespace client
 {
@@ -18,6 +20,7 @@ namespace client
 
         private StreamReader sreader;
         private StreamWriter swriter;
+        private NetworkStream sstream;
 
         private ClientForm parentForm;
 
@@ -63,7 +66,7 @@ namespace client
                 client.Connect(serverIP, 5000);
                 swriter = new StreamWriter(client.GetStream());
                 swriter.WriteLine(clientIP);
-
+                sstream=client.GetStream();
 
                 //서버-클라이언트 연결 시작
 
@@ -93,7 +96,10 @@ namespace client
         {
             swriter.WriteLine(header + "|" + content);
         }
-
+        public void Send_imgage_byte(byte[] img)
+        {
+            sstream.Write(img,0, img.Length);
+        }
         //응답을 대기하는 부분. 스레드로 실행됨
         private void Connecting()
         {
@@ -109,6 +115,8 @@ namespace client
         {
             string[] response = msg.Split('|');
             string header = response[0];
+            if (response.Length < 2)
+                return;
             string content = response[1];
 
             if (header.Equals("NONE"))
@@ -252,6 +260,28 @@ namespace client
             {
                 parentForm.Ranking(content);
             }
+            else if (header.Equals("IMG"))
+            {
+                int n = Convert.ToInt32(content);
+                int size=0;
+                int bytes;
+                Image img;
+                for (int i = 0; i < n; i++)
+                {
+                    size = Convert.ToInt32(sreader.ReadLine());
+                    byte[] buf = new byte[size];
+                    while ((bytes = sstream.Read(buf, 0, size)) != size)
+                    {
+                        swriter.WriteLine("fail");
+                    }
+                    using (MemoryStream ms = new MemoryStream(buf))
+                    {
+                        img = Image.FromStream(ms);
+                    }
+                    parentForm.GetImg(img,i);
+                }
+                //parentForm.GetImgEnd();
+            }
             else if (header.Equals("GAMESCREEN"))
             {
                 if (content.Equals("OWNERWAIT"))
@@ -290,8 +320,8 @@ namespace client
                 {
                     parentForm.UnlockByBuzzer();
                 }
+                
             }
         }
-
     }
 }

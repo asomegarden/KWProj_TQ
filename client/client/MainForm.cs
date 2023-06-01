@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace client
 {
@@ -563,6 +565,9 @@ namespace client
             // 모든 정보가 맞을 때, 게임 시작 패널로 넘어감
             if (result == DialogResult.Yes)
             {
+                Image image = Image.FromFile(image_file);
+                client.RequestSendImg();
+                client.Send_imgage_byte(Img_to_byte(image));
                 client.RequestSignIn(p1_username_tbx.Text, p1_pw_tbx.Text);
                 islock = true;
                 lock (locker)
@@ -753,7 +758,7 @@ namespace client
 
                 //OwnerWait();
 
-                p4_1_start_btn.Visible = true;
+                p4_1_start_btn.Invoke(new MethodInvoker(delegate { p4_1_start_btn.Visible = true; }));
 
                 client.RequestSendRoomChat("시스템", p1_username_tbx.Text + "이(가) 방에 참가함");
                 client.RequestPlayerList(roomname); // 현재 방에 접속된 접속 인원 이름을 받아옴.
@@ -1439,17 +1444,20 @@ namespace client
                 p4_1_message_tbx.Text = "";
             }
         }
-
+        
         private void panel4_1_owner_waitRoom_VisibleChanged(object sender, EventArgs e)
         {
             //client.RequestRoomList();
             //RoomList(serverRoomInfo);
+            client.RequestGetImg();
             client.RequestPlayerList(roomname);
-
+            
+            
             if (panel4_1_owner_waitRoom.Visible == true)
             {
-                p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Image = Bitmap.FromFile(image_file); }));
-                p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Image = Bitmap.FromFile(image_file); }));
+                       
+                //p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Image = Bitmap.FromFile(image_file); }));
+                //p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Image = Bitmap.FromFile(image_file); }));
                 //p4_player1_img.Image = Bitmap.FromFile(image_file);
                 //p4_player1_img.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -1614,14 +1622,48 @@ namespace client
                 p4_message_tbx.Text = "";
             }
         }
-        
+        Image player1_img, player2_img, player3_img, player4_img, player5_img;
+        byte[] p1img;
+
+        public Image Byte_to_img(byte[] data)
+        {
+            using(MemoryStream ms = new MemoryStream(data))
+            {
+                Image img = Image.FromStream(ms);
+                return img;
+            }
+        }
+        public override void GetImg(Image img,int n)
+        {
+           
+            switch (n)
+            {  
+                case 0:
+                    player1_img = img;
+                    p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Image = player1_img; }));
+                    p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Visible = true; }));
+                    break;
+                case 1:
+                    player2_img = img;
+                    p4_player2_img.Invoke(new MethodInvoker(delegate { p4_player2_img.Image = player2_img; }));
+                    break;
+                case 2:
+                    player3_img = img;
+                    break;
+                case 3:
+                    player4_img = img;
+                    break;
+                case 4:
+                    player5_img = img;
+                    break;
+            }
+        }
         private void panel4_player_waitRoom_VisibleChanged(object sender, EventArgs e)
         {
             if(panel4_player_waitRoom.Visible == true)
             {
                 // img 
-                p4_player1_img.Invoke(new MethodInvoker(delegate { p4_player1_img.Image = Bitmap.FromFile(image_file); }));
-                p4_player2_img.Invoke(new MethodInvoker(delegate { p4_player2_img.Image = Bitmap.FromFile(image_file); }));
+                
 
                 this.ActiveControl = p4_message_tbx;
                 p4_chat_tbx.Enabled = false;
@@ -2507,6 +2549,12 @@ namespace client
         #region image 추가
         string image_file = string.Empty;
 
+        private byte[] Img_to_byte(Image image)
+        {
+            MemoryStream ms=new MemoryStream();
+            image.Save(ms, image.RawFormat);
+            return ms.ToArray();
+        }
         private void p1_img_btn_Click(object sender, EventArgs e)
         {
             
