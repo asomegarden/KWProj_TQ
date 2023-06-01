@@ -142,9 +142,9 @@ namespace client
         {
             SendRequest("GETRANK", "0");
         }
-        public void RequestSendImg()
+        public void RequestSendImg(string img)
         {
-            SendRequest("IMGBYTE", "0");
+            SendRequest("IMGBYTE", img);
         }
         public void RequestGetImg()
         {

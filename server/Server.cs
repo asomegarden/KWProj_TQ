@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Collections;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.ComponentModel;
 
 namespace ServerProgram
 {
@@ -26,7 +27,7 @@ namespace ServerProgram
         public IPAddress clientIP;
         private int win_point;
         private int remain_qs=5;
-        private byte[] Img_profile_byte;
+        private string Img_profile_byte;
 
         public string username = "NONE";
         public bool ready = false;
@@ -64,36 +65,9 @@ namespace ServerProgram
             conn.Close();
             win_point = 0;
         }
-        public byte[] img_from_client()
+        public void img_from_client(string img)
         {
-            byte[] buf = new byte[1024];
-            int bytes;
-            MemoryStream ms= new MemoryStream();
-            while((bytes=stream.Read(buf, 0, buf.Length)) > 0)
-            {
-                ms.Write(buf,0,bytes);
-                if (bytes < 1024)
-                    break;
-            }
-            Img_profile_byte=ms.ToArray();
-            ms.Close();
-            return Img_profile_byte;
-        }
-        public void send_image(byte[] img)
-        {
-            stream.Write(img,0,img.Length);
-            while (true)
-            {
-                if (reader.ReadLine().CompareTo("fail") == 0)
-                    stream.Write(img, 0, img.Length);
-                else
-                    break;
-            }
-        }
-        public void send_imgsize(int size)
-        {
-            writer.WriteLine(size);
-            reader.ReadLine();
+            Img_profile_byte = img;
         }
         public void change_room(int newRoom)
         {
@@ -133,7 +107,7 @@ namespace ServerProgram
         public void minus_chance() { remain_qs--; }
         public int get_remain_chance() { return remain_qs; }
         public void set_remain_chance() { remain_qs = 5; }
-        public byte[] get_imgbyte() { return Img_profile_byte; }
+        public string get_imgstring() { return Img_profile_byte; }
     }
 
     public class MainServer
@@ -369,7 +343,7 @@ namespace ServerProgram
                         Parse_rank(server);
                     }else if (header.Equals("IMGBYTE"))
                     {
-                        server.img_from_client();
+                        server.img_from_client(content);
                         
                     }else if (header.Equals("GETIMG"))
                     {
@@ -1284,12 +1258,12 @@ namespace ServerProgram
 
             for (int i = 0; i < qList.Count; i++)
             {
-                qList[i].SendResponse("IMG", qList.Count.ToString());
+                //server.SendResponse("IMG", qList.Count.ToString());
+
                 for(int j = 0;j<qList.Count; j++)
                 {
-                    byte[] img = qList[j].get_imgbyte();
-                    qList[i].send_imgsize(img.Length);
-                    qList[i].send_image(img);
+                    string img = qList[j].get_imgstring();
+                    qList[i].SendResponse("IMG", i + ","+ img);
                 }
             }
         }

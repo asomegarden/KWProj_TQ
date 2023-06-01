@@ -566,8 +566,8 @@ namespace client
             if (result == DialogResult.Yes)
             {
                 Image image = Image.FromFile(image_file);
-                client.RequestSendImg();
-                client.Send_imgage_byte(Img_to_byte(image));
+                client.RequestSendImg(Img_to_string(image));
+                
                 client.RequestSignIn(p1_username_tbx.Text, p1_pw_tbx.Text);
                 islock = true;
                 lock (locker)
@@ -1455,7 +1455,9 @@ namespace client
             
             if (panel4_1_owner_waitRoom.Visible == true)
             {
-                       
+                 p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Visible = true; }));
+                p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Visible = true; }));
+
                 //p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Image = Bitmap.FromFile(image_file); }));
                 //p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Image = Bitmap.FromFile(image_file); }));
                 //p4_player1_img.Image = Bitmap.FromFile(image_file);
@@ -1640,12 +1642,12 @@ namespace client
             {  
                 case 0:
                     player1_img = img;
-                    p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Image = player1_img; }));
-                    p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Visible = true; }));
+                    p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Image = img; }));
+                   
                     break;
                 case 1:
                     player2_img = img;
-                    p4_player2_img.Invoke(new MethodInvoker(delegate { p4_player2_img.Image = player2_img; }));
+                    p4_player2_img.Invoke(new MethodInvoker(delegate { p4_player2_img.Image = img; }));
                     break;
                 case 2:
                     player3_img = img;
@@ -2549,11 +2551,13 @@ namespace client
         #region image 추가
         string image_file = string.Empty;
 
-        private byte[] Img_to_byte(Image image)
+        private string Img_to_string(Image image)
         {
             MemoryStream ms=new MemoryStream();
             image.Save(ms, image.RawFormat);
-            return ms.ToArray();
+            byte[] imgbyte=ms.ToArray();
+            string imgstring=Convert.ToBase64String(imgbyte);
+            return imgstring;
         }
         private void p1_img_btn_Click(object sender, EventArgs e)
         {

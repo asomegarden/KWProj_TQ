@@ -96,10 +96,7 @@ namespace client
         {
             swriter.WriteLine(header + "|" + content);
         }
-        public void Send_imgage_byte(byte[] img)
-        {
-            sstream.Write(img,0, img.Length);
-        }
+        
         //응답을 대기하는 부분. 스레드로 실행됨
         private void Connecting()
         {
@@ -262,25 +259,14 @@ namespace client
             }
             else if (header.Equals("IMG"))
             {
-                int n = Convert.ToInt32(content);
-                int size=0;
-                int bytes;
-                Image img;
-                for (int i = 0; i < n; i++)
+                string[] img = content.Split(',');
+                int num = Convert.ToInt32((string)img[0]);
+                byte[] imgbyte = Convert.FromBase64String(img[1]);
+                using(MemoryStream ms = new MemoryStream(imgbyte))
                 {
-                    size = Convert.ToInt32(sreader.ReadLine());
-                    byte[] buf = new byte[size];
-                    while ((bytes = sstream.Read(buf, 0, size)) != size)
-                    {
-                        swriter.WriteLine("fail");
-                    }
-                    using (MemoryStream ms = new MemoryStream(buf))
-                    {
-                        img = Image.FromStream(ms);
-                    }
-                    parentForm.GetImg(img,i);
+                    Image image=Image.FromStream(ms);
+                    parentForm.GetImg(image, num);
                 }
-                //parentForm.GetImgEnd();
             }
             else if (header.Equals("GAMESCREEN"))
             {
