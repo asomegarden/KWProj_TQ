@@ -42,6 +42,7 @@ namespace client
             p1_title_label.Font = font_40;
 
             // p1_1_login
+            p1_img_btn.Font = font_20;
             p1_midTitle_label.Font = font_16;
             p1_username_tbx.Font = font_16;
             p1_username_label.Font = font_14;
@@ -297,6 +298,7 @@ namespace client
         private void p1_1_login_panel_VisibleChanged(object sender, EventArgs e)
         {
             this.ActiveControl = p1_username_tbx;   // 커서 포커스 설정
+            p1_img_btn.Invoke(new MethodInvoker(delegate { p1_img_btn.Visible = true; }));
             p1_signUp_btn.Invoke(new MethodInvoker(delegate { p1_signUp_btn.Visible = true; }));
             p1_login_btn.Invoke(new MethodInvoker(delegate { p1_login_btn.Visible = true; }));
             p2_gameStart_btn.Invoke(new MethodInvoker(delegate { p2_gameStart_btn.Visible = false; }));
@@ -1446,6 +1448,11 @@ namespace client
 
             if (panel4_1_owner_waitRoom.Visible == true)
             {
+                p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Image = Bitmap.FromFile(image_file); }));
+                p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Image = Bitmap.FromFile(image_file); }));
+                //p4_player1_img.Image = Bitmap.FromFile(image_file);
+                //p4_player1_img.SizeMode = PictureBoxSizeMode.StretchImage;
+
                 this.ActiveControl = p4_1_message_tbx;  // 마우스 커서 설정
                 p4_1_chat_tbx.Enabled = false;      // 채팅창 입력 안되도록 변경
 
@@ -1612,6 +1619,10 @@ namespace client
         {
             if(panel4_player_waitRoom.Visible == true)
             {
+                // img 
+                p4_player1_img.Invoke(new MethodInvoker(delegate { p4_player1_img.Image = Bitmap.FromFile(image_file); }));
+                p4_player2_img.Invoke(new MethodInvoker(delegate { p4_player2_img.Image = Bitmap.FromFile(image_file); }));
+
                 this.ActiveControl = p4_message_tbx;
                 p4_chat_tbx.Enabled = false;
                 p4_ready_btn.Invoke(new MethodInvoker(delegate { p4_ready_btn.Visible = true; }));
@@ -2493,7 +2504,29 @@ namespace client
             p6_2_QA_tbx.Enabled = false;
         }
 
+        #region image 추가
+        string image_file = string.Empty;
 
+        private void p1_img_btn_Click(object sender, EventArgs e)
+        {
+            
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                image_file = ofd.FileName;      // 이미지 이름으로 받아옴
+            }
+            else if (ofd.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+            //p4_player1_img.Image = Bitmap.FromFile(image_file);
+            //p4_player1_img.SizeMode = PictureBoxSizeMode.StretchImage;
+
+        }
+
+        #endregion
 
 
         // 게임 시작 후 질문자가 질문을 기다리는 화면 > 턴x
