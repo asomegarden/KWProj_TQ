@@ -19,7 +19,6 @@ namespace client
         {
             //this.SuspendLayout();
             InitializeComponent();
-            TryConnectServer();
         }
         
         protected Client client;
