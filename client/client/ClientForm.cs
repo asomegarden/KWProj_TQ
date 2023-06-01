@@ -304,7 +304,7 @@ namespace client
             }
         }
 
-        private void TryConnectServer()
+        protected void TryConnectServer()
         {
             client = new Client(this);
             List<IPAddress> ipList = LoadAllServerIp("MyServerIp.txt");
