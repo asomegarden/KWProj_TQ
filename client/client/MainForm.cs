@@ -22,12 +22,15 @@ namespace client
             InitializeComponent();
 
             #region font 설정
-            Font font_40 = new Font(FontLibrary.Families[0], 40f);
-            Font font_20 = new Font(FontLibrary.Families[0], 20f);
-            Font font_18 = new Font(FontLibrary.Families[0], 18f);
-            Font font_16 = new Font(FontLibrary.Families[0], 16f);
-            Font font_14 = new Font(FontLibrary.Families[0], 14f);
-            Font font_12 = new Font(FontLibrary.Families[0], 12f);
+            PrivateFontCollection privateFonts = new PrivateFontCollection();
+            privateFonts.AddFontFile(@"./HANCOMMALANGMALANG-BOLD.TTF");
+            
+            Font font_40 = new Font(privateFonts.Families[0], 40f);
+            Font font_20 = new Font(privateFonts.Families[0], 20f);
+            Font font_18 = new Font(privateFonts.Families[0], 18f);
+            Font font_16 = new Font(privateFonts.Families[0], 16f);
+            Font font_14 = new Font(privateFonts.Families[0], 14f);
+            Font font_12 = new Font(privateFonts.Families[0], 12f);
             // main form
             title_label.Font = font_40;
             midTitle_label.Font = font_18;
