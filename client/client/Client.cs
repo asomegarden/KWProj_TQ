@@ -50,10 +50,12 @@ namespace client
         }
 
         //서버와 접속을 시작한다.
-        public void Start()
+        public bool Start(IPAddress newServerIp)
         {
             try
             {
+                serverIP = newServerIp;
+                
                 //만약 입력된 IP가 127.0.0.1 이면 로컬 연결이므로 clientIP, serverIP 모두 127.0.0.1로
                 IPAddress clientIP = IPAddress.Parse("127.0.0.1");
                 if (!serverIP.ToString().Equals("127.0.0.1")) clientIP = IPAddress.Parse(GetMyIP());
@@ -78,13 +80,15 @@ namespace client
             }
             catch(Exception ex)
             {
+                activate = false;
                 //parentForm.ShowMessageBox("서버 연결 실패", "Fail", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
-                parentForm.ShowMessageBox(ex.Message, "Fail", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                //parentForm.ShowMessageBox(ex.Message, "Fail", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
             finally
             {
                 //서버 연결 성공 여부를 전달
-                parentForm.ConnectServerResult(activate);
+                return activate;
+                //parentForm.ConnectServerResult(activate);
             }
         }
 
