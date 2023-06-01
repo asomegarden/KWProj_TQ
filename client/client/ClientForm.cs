@@ -313,12 +313,12 @@ namespace client
                 for(int i=0; i<ipList.Count; i++){
                     client.ServerIP = ipList[i];
                     if(client.Start(ipList[i])){
-                        parentForm.ConnectServerResult(true);
+                        client.parentForm.ConnectServerResult(true);
                         return;
                     }
                 }
             }
-            parentForm.ConnectServerResult(false);
+            client.parentForm.ConnectServerResult(false);
         }
 
         private List<IPAddress> LoadAllServerIp(string filePath)
