@@ -72,7 +72,7 @@
             // 
             this.basicImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("basicImageList.ImageStream")));
             this.basicImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.basicImageList.Images.SetKeyName(0, "basicImage.jpg");
+            this.basicImageList.Images.SetKeyName(0, "basicImage_blue.png");
             // 
             // Form1
             // 
