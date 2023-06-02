@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Collections;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.ComponentModel;
 
 namespace ServerProgram
 {
@@ -21,21 +22,24 @@ namespace ServerProgram
         private TcpClient client;
         private StreamReader reader;
         private StreamWriter writer;
+        private NetworkStream stream;
         private int room;
         public IPAddress clientIP;
         private int win_point;
         private int remain_qs=5;
+        private string Img_profile_byte;
 
         public string username = "NONE";
         public bool ready = false;
         
-        public Server(IPAddress clientIP, TcpListener l, int room,TcpClient client, StreamReader reader) 
+        public Server(IPAddress clientIP, TcpListener l, int room,TcpClient client, StreamReader reader,NetworkStream stream) 
         { //서버 생성자. 클라스 생성과 함께 서버연결
             this.room = room;
             this.clientIP = clientIP;
             this.listener = l;
             this.reader = reader;
             this.client = client;
+            this.stream = stream;
         }
         ~Server()
         {
@@ -61,7 +65,10 @@ namespace ServerProgram
             conn.Close();
             win_point = 0;
         }
-
+        public void img_from_client(string img)
+        {
+            Img_profile_byte = img;
+        }
         public void change_room(int newRoom)
         {
             room = newRoom;
@@ -100,6 +107,7 @@ namespace ServerProgram
         public void minus_chance() { remain_qs--; }
         public int get_remain_chance() { return remain_qs; }
         public void set_remain_chance() { remain_qs = 5; }
+        public string get_imgstring() { return Img_profile_byte; }
     }
 
     public class MainServer
@@ -145,10 +153,11 @@ namespace ServerProgram
                     TcpClient client = listener.AcceptTcpClient();
                     StreamReader sread = new StreamReader(client.GetStream());
                     string msg = sread.ReadLine();
+                    NetworkStream stream = client.GetStream();
 
                     IPAddress clientIP = IPAddress.Parse("127.0.0.1");
 
-                    servers.Add(new Server(clientIP, listener, 0, client, sread));
+                    servers.Add(new Server(clientIP, listener, 0, client, sread,stream));
                     Thread thread1 = new Thread(chat_server);
                     thread1.IsBackground = true;
                     thread1.Start();
@@ -332,6 +341,13 @@ namespace ServerProgram
                     } else if (header.Equals("GETRANK"))
                     {
                         Parse_rank(server);
+                    }else if (header.Equals("IMGBYTE"))
+                    {
+                        server.img_from_client(content);
+                        
+                    }else if (header.Equals("GETIMG"))
+                    {
+                        Img_work(server);
                     }
                     //알 수 없는 header일때
                     else
@@ -1225,6 +1241,31 @@ namespace ServerProgram
             conn.Close();
             server.SendResponse("RANKING", rank_arr);
 
+        }
+        private void Img_work(Server server)
+        {
+            GameRoom room = null;
+            for (int i = 0; i < gameRooms.Count; i++)
+            {
+                if (gameRooms[i].ContainPlayer(server))
+                {
+                    room = gameRooms[i];
+                    break;
+                }
+            }
+            if (room == null) return;
+            List<Server> qList = room.GetPlayerList();
+
+            for (int i = 0; i < qList.Count; i++)
+            {
+                //server.SendResponse("IMG", qList.Count.ToString());
+
+                for(int j = 0;j<qList.Count; j++)
+                {
+                    string img = qList[j].get_imgstring();
+                    qList[i].SendResponse("IMG", i + ","+ img);
+                }
+            }
         }
         #endregion
     }

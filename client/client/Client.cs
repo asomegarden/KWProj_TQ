@@ -8,6 +8,8 @@ using System.Net.Sockets;
 using System.Threading;
 using System.IO;
 using System.Security.Policy;
+using System.Runtime.InteropServices.ComTypes;
+using System.Drawing;
 
 namespace client
 {
@@ -18,6 +20,7 @@ namespace client
 
         private StreamReader sreader;
         private StreamWriter swriter;
+        private NetworkStream sstream;
 
         public ClientForm parentForm;
 
@@ -63,7 +66,7 @@ namespace client
                 client.Connect(serverIP, 5000);
                 swriter = new StreamWriter(client.GetStream());
                 swriter.WriteLine(clientIP);
-
+                sstream=client.GetStream();
 
                 //서버-클라이언트 연결 시작
 
@@ -88,7 +91,7 @@ namespace client
         {
             swriter.WriteLine(header + "|" + content);
         }
-
+        
         //응답을 대기하는 부분. 스레드로 실행됨
         private void Connecting()
         {
@@ -104,6 +107,8 @@ namespace client
         {
             string[] response = msg.Split('|');
             string header = response[0];
+            if (response.Length < 2)
+                return;
             string content = response[1];
 
             if (header.Equals("NONE"))
@@ -247,6 +252,17 @@ namespace client
             {
                 parentForm.Ranking(content);
             }
+            else if (header.Equals("IMG"))
+            {
+                string[] img = content.Split(',');
+                int num = Convert.ToInt32((string)img[0]);
+                byte[] imgbyte = Convert.FromBase64String(img[1]);
+                using(MemoryStream ms = new MemoryStream(imgbyte))
+                {
+                    Image image=Image.FromStream(ms);
+                    parentForm.GetImg(image, num);
+                }
+            }
             else if (header.Equals("GAMESCREEN"))
             {
                 if (content.Equals("OWNERWAIT"))
@@ -285,8 +301,8 @@ namespace client
                 {
                     parentForm.UnlockByBuzzer();
                 }
+                
             }
         }
-
     }
 }
