@@ -477,6 +477,28 @@ namespace client
                 // 모든 정보가 맞을 때, 게임 시작 패널로 넘어감
                 if (result == DialogResult.Yes)
                 {
+                    string imgCheck = string.Format("프로필 이미지를 추가하시겠습니까?");
+                    var imgAdd_messageRes = MessageBox.Show(imgCheck, "Quesiton", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (imgAdd_messageRes == DialogResult.Yes)
+                    {
+                        // 이미지 추가
+                        OpenFileDialog ofd = new OpenFileDialog();
+                        ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
+
+                        if (ofd.ShowDialog() == DialogResult.OK)
+                        {
+                            image_file = ofd.FileName;      // 이미지 이름으로 받아옴
+                            Image image = Image.FromFile(image_file);
+                            client.RequestSetProfileImage(image);       // 프사 등록 요청
+                        }
+                        else if (ofd.ShowDialog() == DialogResult.Cancel)
+                        {
+                            return;
+                        }
+
+                    }
+
                     client.RequestSignIn(p1_username_tbx.Text, p1_pw_tbx.Text);
                     islock = true;
                     lock (locker)
@@ -564,6 +586,28 @@ namespace client
             // 모든 정보가 맞을 때, 게임 시작 패널로 넘어감
             if (result == DialogResult.Yes)
             {
+                string imgCheck = string.Format("프로필 이미지를 추가하시겠습니까?");
+                var imgAdd_messageRes = MessageBox.Show(imgCheck, "Quesiton", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (imgAdd_messageRes == DialogResult.Yes)
+                {
+                    // 이미지 추가
+                    OpenFileDialog ofd = new OpenFileDialog();
+                    ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
+
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        image_file = ofd.FileName;      // 이미지 이름으로 받아옴
+                        Image image = Image.FromFile(image_file);
+                        client.RequestSetProfileImage(image);       // 프사 등록 요청
+                    }
+                    else if (ofd.ShowDialog() == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+
+                }
+
                 client.RequestSignIn(p1_username_tbx.Text, p1_pw_tbx.Text);
                 islock = true;
                 lock (locker)
@@ -2141,23 +2185,8 @@ namespace client
 
         }
 
-        private void p3_friend_list_btn_Click(object sender, EventArgs e) 
-        {
-            //수정 : 일단 테스트 용으로 프사 설정 부분을 넣어둔거. 나중에 프사 설정 버튼 따로 만들어주세요
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
-
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                image_file = ofd.FileName;      // 이미지 이름으로 받아옴
-                Image image = Image.FromFile(image_file);
-                client.RequestSetProfileImage(image);
-            }
-            else if (ofd.ShowDialog() == DialogResult.Cancel)
-            {
-                return;
-            }
-
+        private void p3_friend_list_btn_Click(object sender, EventArgs e)
+        { 
             client.RequestFirendsList();
             panel8_friend.Invoke(new MethodInvoker(delegate { panel8_friend.Visible = true; }));
             panel3_roomList.Invoke(new MethodInvoker(delegate { panel3_roomList.Visible = false; }));
