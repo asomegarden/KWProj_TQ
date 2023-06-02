@@ -35,7 +35,6 @@ UI 디자인은 `MetroFramework` 와 `MetroSetUI`를 사용했습니다.
 4. "솔루션용 Nuget 패키지 관리"를 선택합니다.
 5. "SQLite"를 찾아 제거합니다.
 6. 다시 "SQLite"를 설치합니다.
-
 <br><br>
 
 ## 🔧 고정 서버 IP 변경 방법
