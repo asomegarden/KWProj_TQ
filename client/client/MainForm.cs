@@ -37,7 +37,6 @@ namespace client
             main_login_btn.Font = font_20;
 
             // panel1_login_server
-            p1_img_btn.Font = font_20;
             p1_login_btn.Font = font_20;
             p1_signUp_btn.Font = font_20;
             p1_ip_tbx.Font = font_16;
