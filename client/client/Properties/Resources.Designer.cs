@@ -61,12 +61,12 @@ namespace client.Properties {
         }
         
         /// <summary>
-        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static byte[] HANCOMMALANGMALANG_BOLD {
+        internal static System.Drawing.Bitmap blocked {
             get {
-                object obj = ResourceManager.GetObject("HANCOMMALANGMALANG_BOLD", resourceCulture);
-                return ((byte[])(obj));
+                object obj = ResourceManager.GetObject("blocked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -77,6 +77,16 @@ namespace client.Properties {
             get {
                 object obj = ResourceManager.GetObject("blocked1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static byte[] HANCOMMALANGMALANG_BOLD {
+            get {
+                object obj = ResourceManager.GetObject("HANCOMMALANGMALANG_BOLD", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
