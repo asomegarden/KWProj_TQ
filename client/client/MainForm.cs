@@ -2694,11 +2694,27 @@ namespace client
                 return;
             }
         }
+
+        private void p9_img_btn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                image_file = ofd.FileName;      // 이미지 이름으로 받아옴
+                Image image = Image.FromFile(image_file);
+                client.RequestSetProfileImage(image);
+            }
+            else if (ofd.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+        }
         #endregion
 
         #region 프로필 이미지
 
-        Image myImg;
         string image_file = string.Empty;
 
         private string Img_to_string(Image image)
@@ -2769,7 +2785,7 @@ namespace client
         private void p9_imgDelete_btn_Click(object sender, EventArgs e)
         {
             client.RequestRemoveProfileImage();
-            client.RequestGetProfileImage();
+
             //p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.Image = Properties.Resources.blocked; }));
         }
         #endregion
