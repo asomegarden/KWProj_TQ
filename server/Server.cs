@@ -566,7 +566,7 @@ namespace ServerProgram
         private string GetProfileImageString(Server server)
         {
             Tuple<string, string> findItem = profileImgList.Find(user => user.Item1.Equals(server.username));
-            if (findItem == null) return null;
+            if (findItem == null) return GetBasicImage();
             else return findItem.Item2;
         }
 
@@ -886,7 +886,6 @@ namespace ServerProgram
             {
                 room.players.ForEach(p => {
                     string userProfileImage = GetProfileImageString(p);
-                    if (userProfileImage == null) userProfileImage = GetBasicImage();
 
                     playerListString += p.username + ":" + userProfileImage + ",";
                     });

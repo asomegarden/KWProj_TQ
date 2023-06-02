@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title_label = new System.Windows.Forms.Label();
             this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             this.midTitle_label = new System.Windows.Forms.Label();
@@ -67,6 +67,7 @@
             this.p2_welcome__label = new System.Windows.Forms.Label();
             this.p2_title_label = new System.Windows.Forms.Label();
             this.panel3_roomList = new System.Windows.Forms.Panel();
+            this.p3_profile_btn = new MetroSet_UI.Controls.MetroSetButton();
             this.p3_friend_list_btn = new MetroSet_UI.Controls.MetroSetButton();
             this.p3_rank_btn = new MetroSet_UI.Controls.MetroSetButton();
             this.p3_dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -253,6 +254,14 @@
             this.p8_friendlist_label = new System.Windows.Forms.Label();
             this.p8_back_btn = new MetroSet_UI.Controls.MetroSetButton();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.panel9_profile = new System.Windows.Forms.Panel();
+            this.p9_imgDelete_btn = new MetroSet_UI.Controls.MetroSetButton();
+            this.p9_imgChange_btn = new MetroSet_UI.Controls.MetroSetButton();
+            this.p9_playerName_label = new System.Windows.Forms.Label();
+            this.p9_profile_img = new System.Windows.Forms.PictureBox();
+            this.p9_title_label = new System.Windows.Forms.Label();
+            this.p9_back_btn = new MetroSet_UI.Controls.MetroSetButton();
+            this.p1_img_btn = new MetroSet_UI.Controls.MetroSetButton();
             this.panel1_login_server.SuspendLayout();
             this.p1_1_login_panel.SuspendLayout();
             this.panel2_gameStart.SuspendLayout();
@@ -278,6 +287,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.p7_ranking_dgv)).BeginInit();
             this.panel8_friend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p8_friend_dgv)).BeginInit();
+            this.panel9_profile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p9_profile_img)).BeginInit();
             this.SuspendLayout();
             // 
             // title_label
@@ -359,6 +370,7 @@
             // 
             // panel1_login_server
             // 
+            this.panel1_login_server.Controls.Add(this.p1_img_btn);
             this.panel1_login_server.Controls.Add(this.p1_login_btn);
             this.panel1_login_server.Controls.Add(this.p1_signUp_btn);
             this.panel1_login_server.Controls.Add(this.p1_1_login_panel);
@@ -666,6 +678,7 @@
             // 
             // panel3_roomList
             // 
+            this.panel3_roomList.Controls.Add(this.p3_profile_btn);
             this.panel3_roomList.Controls.Add(this.p3_friend_list_btn);
             this.panel3_roomList.Controls.Add(this.p3_rank_btn);
             this.panel3_roomList.Controls.Add(this.p3_dataGridView1);
@@ -686,6 +699,34 @@
             this.panel3_roomList.TabIndex = 6;
             this.panel3_roomList.Visible = false;
             this.panel3_roomList.VisibleChanged += new System.EventHandler(this.panel3_roomList_VisibleChanged);
+            // 
+            // p3_profile_btn
+            // 
+            this.p3_profile_btn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p3_profile_btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p3_profile_btn.DisabledForeColor = System.Drawing.Color.Gray;
+            this.p3_profile_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.p3_profile_btn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p3_profile_btn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p3_profile_btn.HoverTextColor = System.Drawing.Color.White;
+            this.p3_profile_btn.IsDerivedStyle = true;
+            this.p3_profile_btn.Location = new System.Drawing.Point(773, 25);
+            this.p3_profile_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p3_profile_btn.Name = "p3_profile_btn";
+            this.p3_profile_btn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p3_profile_btn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p3_profile_btn.NormalTextColor = System.Drawing.Color.White;
+            this.p3_profile_btn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p3_profile_btn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p3_profile_btn.PressTextColor = System.Drawing.Color.White;
+            this.p3_profile_btn.Size = new System.Drawing.Size(183, 41);
+            this.p3_profile_btn.Style = MetroSet_UI.Enums.Style.Light;
+            this.p3_profile_btn.StyleManager = null;
+            this.p3_profile_btn.TabIndex = 22;
+            this.p3_profile_btn.Text = "프로필 보기";
+            this.p3_profile_btn.ThemeAuthor = "Narwin";
+            this.p3_profile_btn.ThemeName = "MetroLite";
+            this.p3_profile_btn.Click += new System.EventHandler(this.p3_profile_btn_Click);
             // 
             // p3_friend_list_btn
             // 
@@ -746,19 +787,19 @@
             // p3_dataGridView1
             // 
             this.p3_dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.p3_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.p3_dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.p3_dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.p3_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.p3_dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.p3_dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.p3_dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.p3_dgv_RoomName,
@@ -769,24 +810,24 @@
             this.p3_dataGridView1.MultiSelect = false;
             this.p3_dataGridView1.Name = "p3_dataGridView1";
             this.p3_dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.p3_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.p3_dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.p3_dataGridView1.RowHeadersVisible = false;
             this.p3_dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.p3_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.p3_dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle22;
             this.p3_dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.p3_dataGridView1.RowTemplate.Height = 40;
             this.p3_dataGridView1.Size = new System.Drawing.Size(741, 450);
@@ -796,14 +837,14 @@
             // 
             // p3_dgv_RoomName
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.p3_dgv_RoomName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.p3_dgv_RoomName.DefaultCellStyle = dataGridViewCellStyle18;
             this.p3_dgv_RoomName.FillWeight = 134.9317F;
             this.p3_dgv_RoomName.HeaderText = "방 이름";
             this.p3_dgv_RoomName.MinimumWidth = 6;
@@ -812,8 +853,8 @@
             // 
             // p3_dgv_people
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p3_dgv_people.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.p3_dgv_people.DefaultCellStyle = dataGridViewCellStyle19;
             this.p3_dgv_people.FillWeight = 54.10001F;
             this.p3_dgv_people.HeaderText = "접속 인원";
             this.p3_dgv_people.MinimumWidth = 6;
@@ -822,11 +863,11 @@
             // 
             // p3_dgv_btn
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.p3_dgv_btn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("한컴 말랑말랑 Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.p3_dgv_btn.DefaultCellStyle = dataGridViewCellStyle20;
             this.p3_dgv_btn.FillWeight = 68.98967F;
             this.p3_dgv_btn.HeaderText = "버튼";
             this.p3_dgv_btn.MinimumWidth = 6;
@@ -3176,19 +3217,19 @@
             // p7_ranking_dgv
             // 
             this.p7_ranking_dgv.AllowUserToAddRows = false;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.p7_ranking_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.p7_ranking_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
             this.p7_ranking_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.p7_ranking_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.p7_ranking_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.p7_ranking_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.p7_ranking_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -3199,18 +3240,18 @@
             this.p7_ranking_dgv.MultiSelect = false;
             this.p7_ranking_dgv.Name = "p7_ranking_dgv";
             this.p7_ranking_dgv.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.p7_ranking_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.p7_ranking_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.p7_ranking_dgv.RowHeadersVisible = false;
             this.p7_ranking_dgv.RowHeadersWidth = 51;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p7_ranking_dgv.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.p7_ranking_dgv.RowsDefaultCellStyle = dataGridViewCellStyle26;
             this.p7_ranking_dgv.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.p7_ranking_dgv.RowTemplate.Height = 40;
             this.p7_ranking_dgv.Size = new System.Drawing.Size(817, 401);
@@ -3296,19 +3337,19 @@
             // p8_friend_dgv
             // 
             this.p8_friend_dgv.AllowUserToAddRows = false;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.p8_friend_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.p8_friend_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
             this.p8_friend_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.p8_friend_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.p8_friend_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.p8_friend_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.p8_friend_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.p8_dgv_column1,
@@ -3320,18 +3361,18 @@
             this.p8_friend_dgv.MultiSelect = false;
             this.p8_friend_dgv.Name = "p8_friend_dgv";
             this.p8_friend_dgv.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.p8_friend_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.p8_friend_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.p8_friend_dgv.RowHeadersVisible = false;
             this.p8_friend_dgv.RowHeadersWidth = 51;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p8_friend_dgv.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.p8_friend_dgv.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.p8_friend_dgv.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.p8_friend_dgv.RowTemplate.Height = 40;
             this.p8_friend_dgv.Size = new System.Drawing.Size(735, 385);
@@ -3421,6 +3462,166 @@
             this.timer2.Interval = 3000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // panel9_profile
+            // 
+            this.panel9_profile.Controls.Add(this.p9_imgDelete_btn);
+            this.panel9_profile.Controls.Add(this.p9_imgChange_btn);
+            this.panel9_profile.Controls.Add(this.p9_playerName_label);
+            this.panel9_profile.Controls.Add(this.p9_profile_img);
+            this.panel9_profile.Controls.Add(this.p9_title_label);
+            this.panel9_profile.Controls.Add(this.p9_back_btn);
+            this.panel9_profile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9_profile.Location = new System.Drawing.Point(18, 75);
+            this.panel9_profile.Name = "panel9_profile";
+            this.panel9_profile.Size = new System.Drawing.Size(988, 539);
+            this.panel9_profile.TabIndex = 29;
+            this.panel9_profile.Visible = false;
+            // 
+            // p9_imgDelete_btn
+            // 
+            this.p9_imgDelete_btn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_imgDelete_btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_imgDelete_btn.DisabledForeColor = System.Drawing.Color.Gray;
+            this.p9_imgDelete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.p9_imgDelete_btn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p9_imgDelete_btn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p9_imgDelete_btn.HoverTextColor = System.Drawing.Color.White;
+            this.p9_imgDelete_btn.IsDerivedStyle = true;
+            this.p9_imgDelete_btn.Location = new System.Drawing.Point(514, 300);
+            this.p9_imgDelete_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p9_imgDelete_btn.Name = "p9_imgDelete_btn";
+            this.p9_imgDelete_btn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_imgDelete_btn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_imgDelete_btn.NormalTextColor = System.Drawing.Color.White;
+            this.p9_imgDelete_btn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p9_imgDelete_btn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p9_imgDelete_btn.PressTextColor = System.Drawing.Color.White;
+            this.p9_imgDelete_btn.Size = new System.Drawing.Size(253, 37);
+            this.p9_imgDelete_btn.Style = MetroSet_UI.Enums.Style.Light;
+            this.p9_imgDelete_btn.StyleManager = null;
+            this.p9_imgDelete_btn.TabIndex = 27;
+            this.p9_imgDelete_btn.Text = "이미지 삭제하기";
+            this.p9_imgDelete_btn.ThemeAuthor = "Narwin";
+            this.p9_imgDelete_btn.ThemeName = "MetroLite";
+            this.p9_imgDelete_btn.Click += new System.EventHandler(this.p9_imgDelete_btn_Click);
+            // 
+            // p9_imgChange_btn
+            // 
+            this.p9_imgChange_btn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_imgChange_btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_imgChange_btn.DisabledForeColor = System.Drawing.Color.Gray;
+            this.p9_imgChange_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.p9_imgChange_btn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p9_imgChange_btn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p9_imgChange_btn.HoverTextColor = System.Drawing.Color.White;
+            this.p9_imgChange_btn.IsDerivedStyle = true;
+            this.p9_imgChange_btn.Location = new System.Drawing.Point(514, 349);
+            this.p9_imgChange_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p9_imgChange_btn.Name = "p9_imgChange_btn";
+            this.p9_imgChange_btn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_imgChange_btn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_imgChange_btn.NormalTextColor = System.Drawing.Color.White;
+            this.p9_imgChange_btn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p9_imgChange_btn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p9_imgChange_btn.PressTextColor = System.Drawing.Color.White;
+            this.p9_imgChange_btn.Size = new System.Drawing.Size(253, 37);
+            this.p9_imgChange_btn.Style = MetroSet_UI.Enums.Style.Light;
+            this.p9_imgChange_btn.StyleManager = null;
+            this.p9_imgChange_btn.TabIndex = 26;
+            this.p9_imgChange_btn.Text = "이미지 바꾸기";
+            this.p9_imgChange_btn.ThemeAuthor = "Narwin";
+            this.p9_imgChange_btn.ThemeName = "MetroLite";
+            // 
+            // p9_playerName_label
+            // 
+            this.p9_playerName_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.p9_playerName_label.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.p9_playerName_label.Location = new System.Drawing.Point(499, 151);
+            this.p9_playerName_label.Name = "p9_playerName_label";
+            this.p9_playerName_label.Size = new System.Drawing.Size(465, 52);
+            this.p9_playerName_label.TabIndex = 25;
+            this.p9_playerName_label.Text = "- Player name";
+            this.p9_playerName_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // p9_profile_img
+            // 
+            this.p9_profile_img.InitialImage = global::client.Properties.Resources.blocked;
+            this.p9_profile_img.Location = new System.Drawing.Point(240, 151);
+            this.p9_profile_img.Name = "p9_profile_img";
+            this.p9_profile_img.Size = new System.Drawing.Size(230, 235);
+            this.p9_profile_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p9_profile_img.TabIndex = 24;
+            this.p9_profile_img.TabStop = false;
+            // 
+            // p9_title_label
+            // 
+            this.p9_title_label.AutoSize = true;
+            this.p9_title_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.p9_title_label.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.p9_title_label.Location = new System.Drawing.Point(342, 38);
+            this.p9_title_label.Name = "p9_title_label";
+            this.p9_title_label.Size = new System.Drawing.Size(350, 52);
+            this.p9_title_label.TabIndex = 23;
+            this.p9_title_label.Text = "< 내 프로필 목록 >";
+            this.p9_title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // p9_back_btn
+            // 
+            this.p9_back_btn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_back_btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_back_btn.DisabledForeColor = System.Drawing.Color.Gray;
+            this.p9_back_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.p9_back_btn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p9_back_btn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p9_back_btn.HoverTextColor = System.Drawing.Color.White;
+            this.p9_back_btn.IsDerivedStyle = true;
+            this.p9_back_btn.Location = new System.Drawing.Point(395, 478);
+            this.p9_back_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p9_back_btn.Name = "p9_back_btn";
+            this.p9_back_btn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_back_btn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p9_back_btn.NormalTextColor = System.Drawing.Color.White;
+            this.p9_back_btn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p9_back_btn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p9_back_btn.PressTextColor = System.Drawing.Color.White;
+            this.p9_back_btn.Size = new System.Drawing.Size(253, 59);
+            this.p9_back_btn.Style = MetroSet_UI.Enums.Style.Light;
+            this.p9_back_btn.StyleManager = null;
+            this.p9_back_btn.TabIndex = 22;
+            this.p9_back_btn.Text = "뒤로가기";
+            this.p9_back_btn.ThemeAuthor = "Narwin";
+            this.p9_back_btn.ThemeName = "MetroLite";
+            this.p9_back_btn.Click += new System.EventHandler(this.p9_back_btn_Click);
+            // 
+            // p1_img_btn
+            // 
+            this.p1_img_btn.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p1_img_btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p1_img_btn.DisabledForeColor = System.Drawing.Color.Gray;
+            this.p1_img_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.p1_img_btn.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p1_img_btn.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.p1_img_btn.HoverTextColor = System.Drawing.Color.White;
+            this.p1_img_btn.IsDerivedStyle = true;
+            this.p1_img_btn.Location = new System.Drawing.Point(36, 22);
+            this.p1_img_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p1_img_btn.Name = "p1_img_btn";
+            this.p1_img_btn.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p1_img_btn.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.p1_img_btn.NormalTextColor = System.Drawing.Color.White;
+            this.p1_img_btn.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p1_img_btn.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.p1_img_btn.PressTextColor = System.Drawing.Color.White;
+            this.p1_img_btn.Size = new System.Drawing.Size(245, 70);
+            this.p1_img_btn.Style = MetroSet_UI.Enums.Style.Light;
+            this.p1_img_btn.StyleManager = null;
+            this.p1_img_btn.TabIndex = 10;
+            this.p1_img_btn.Text = "이미지 추가하기";
+            this.p1_img_btn.ThemeAuthor = "Narwin";
+            this.p1_img_btn.ThemeName = "MetroLite";
+            this.p1_img_btn.Visible = false;
+            this.p1_img_btn.Click += new System.EventHandler(this.p1_img_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -3428,6 +3629,8 @@
             this.ClientSize = new System.Drawing.Size(1024, 630);
             this.ControlBox = false;
             this.Controls.Add(this.panel1_login_server);
+            this.Controls.Add(this.panel9_profile);
+            this.Controls.Add(this.panel3_roomList);
             this.Controls.Add(this.panel8_friend);
             this.Controls.Add(this.panel7_rank);
             this.Controls.Add(this.panel6_2_Answer_Wait);
@@ -3437,7 +3640,6 @@
             this.Controls.Add(this.panel5_Owner);
             this.Controls.Add(this.panel4_1_owner_waitRoom);
             this.Controls.Add(this.panel4_player_waitRoom);
-            this.Controls.Add(this.panel3_roomList);
             this.Controls.Add(this.p3_title_label);
             this.Controls.Add(this.panel2_gameStart);
             this.Controls.Add(this.main_login_btn);
@@ -3486,6 +3688,9 @@
             this.panel8_friend.ResumeLayout(false);
             this.panel8_friend.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p8_friend_dgv)).EndInit();
+            this.panel9_profile.ResumeLayout(false);
+            this.panel9_profile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p9_profile_img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3704,5 +3909,14 @@
         private System.Windows.Forms.PictureBox p4_player2_img;
         private System.Windows.Forms.PictureBox p4_1_player2_img;
         private System.Windows.Forms.PictureBox p4_1_player1_img;
+        private MetroSet_UI.Controls.MetroSetButton p3_profile_btn;
+        private System.Windows.Forms.Panel panel9_profile;
+        private System.Windows.Forms.PictureBox p9_profile_img;
+        private System.Windows.Forms.Label p9_title_label;
+        private MetroSet_UI.Controls.MetroSetButton p9_back_btn;
+        private System.Windows.Forms.Label p9_playerName_label;
+        private MetroSet_UI.Controls.MetroSetButton p9_imgChange_btn;
+        private MetroSet_UI.Controls.MetroSetButton p9_imgDelete_btn;
+        private MetroSet_UI.Controls.MetroSetButton p1_img_btn;
     }
 }

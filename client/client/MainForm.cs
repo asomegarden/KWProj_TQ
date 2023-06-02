@@ -37,6 +37,7 @@ namespace client
             main_login_btn.Font = font_20;
 
             // panel1_login_server
+            p1_img_btn.Font = font_20;
             p1_login_btn.Font = font_20;
             p1_signUp_btn.Font = font_20;
             p1_ip_tbx.Font = font_16;
@@ -45,7 +46,6 @@ namespace client
             p1_title_label.Font = font_40;
 
             // p1_1_login
-            p1_img_btn.Font = font_20;
             p1_midTitle_label.Font = font_16;
             p1_username_tbx.Font = font_16;
             p1_username_label.Font = font_14;
@@ -59,7 +59,6 @@ namespace client
             p2_title_label.Font = font_40;
 
             // panel3
-            // datagridView 안에 있는 버튼은 따로 이름을 모르겠어서, 혹시 찾으시면 추가 부탁 드립니다.
             p3_rank_btn.Font = font_14;
             p3_title_label.Font = font_14;
             p3_dataGridView1.Font = font_14;
@@ -74,6 +73,7 @@ namespace client
             p3_people_label.Font = new Font(FontLibrary.Families[0], 11f);
             p3_roomname_label.Font = new Font(FontLibrary.Families[0], 11f);
             p3_friend_list_btn.Font = font_12;
+            p3_profile_btn.Font = font_12;
 
             // panel4
             p4_roomInfo_label.Font = font_12;
@@ -205,11 +205,20 @@ namespace client
             p7_ranking_dgv.Font = font_14;
             p7_ranking_dgv.DefaultCellStyle.Font = font_14; //셀 내부
 
-            //p panel 8
+            // panel8
             p8_back_btn.Font = font_14;
             p8_friendlist_label.Font = font_18;
             p8_friend_dgv.Font = font_14;
             p8_friend_dgv.DefaultCellStyle.Font = font_14; //셀 내부
+
+            // panel9
+            p9_title_label.Font = new Font(FontLibrary.Families[0], 24f);
+            p9_back_btn.Font = font_20;
+            panel9_profile.Font = font_14;
+            p9_playerName_label.Font = font_14;
+            p9_imgDelete_btn.Font = font_14;
+            p9_imgChange_btn.Font = font_14;
+
             #endregion
         }
 
@@ -371,10 +380,34 @@ namespace client
                     result = DialogResult.Yes;
                 }
 
+
                 if (result == DialogResult.Yes)
                 {
+                    /*
+                    string imgCheck = string.Format("프로필 이미지를 추가하시겠습니까?");
+                    var imgAdd_messageRes = MessageBox.Show(imgCheck, "Quesiton", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                    if (imgAdd_messageRes == DialogResult.Yes)
+                    {
+                        // 이미지 추가
+                        OpenFileDialog ofd = new OpenFileDialog();
+                        ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
+
+                        if (ofd.ShowDialog() == DialogResult.OK)
+                        {
+                            image_file = ofd.FileName;      // 이미지 이름으로 받아옴
+                            Image image = Image.FromFile(image_file);
+                            client.RequestSetProfileImage(image);       // 프사 등록 요청
+                        }
+                        else if (ofd.ShowDialog() == DialogResult.Cancel)
+                        {
+                            return;
+                        }
+
+                    }
+                    */
                     client.RequestSignUp(username, password);
+
                     islock = true;
                     lock (locker)
                     {
@@ -477,28 +510,6 @@ namespace client
                 // 모든 정보가 맞을 때, 게임 시작 패널로 넘어감
                 if (result == DialogResult.Yes)
                 {
-                    string imgCheck = string.Format("프로필 이미지를 추가하시겠습니까?");
-                    var imgAdd_messageRes = MessageBox.Show(imgCheck, "Quesiton", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (imgAdd_messageRes == DialogResult.Yes)
-                    {
-                        // 이미지 추가
-                        OpenFileDialog ofd = new OpenFileDialog();
-                        ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
-
-                        if (ofd.ShowDialog() == DialogResult.OK)
-                        {
-                            image_file = ofd.FileName;      // 이미지 이름으로 받아옴
-                            Image image = Image.FromFile(image_file);
-                            client.RequestSetProfileImage(image);       // 프사 등록 요청
-                        }
-                        else if (ofd.ShowDialog() == DialogResult.Cancel)
-                        {
-                            return;
-                        }
-
-                    }
-
                     client.RequestSignIn(p1_username_tbx.Text, p1_pw_tbx.Text);
                     islock = true;
                     lock (locker)
@@ -586,28 +597,6 @@ namespace client
             // 모든 정보가 맞을 때, 게임 시작 패널로 넘어감
             if (result == DialogResult.Yes)
             {
-                string imgCheck = string.Format("프로필 이미지를 추가하시겠습니까?");
-                var imgAdd_messageRes = MessageBox.Show(imgCheck, "Quesiton", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (imgAdd_messageRes == DialogResult.Yes)
-                {
-                    // 이미지 추가
-                    OpenFileDialog ofd = new OpenFileDialog();
-                    ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
-
-                    if (ofd.ShowDialog() == DialogResult.OK)
-                    {
-                        image_file = ofd.FileName;      // 이미지 이름으로 받아옴
-                        Image image = Image.FromFile(image_file);
-                        client.RequestSetProfileImage(image);       // 프사 등록 요청
-                    }
-                    else if (ofd.ShowDialog() == DialogResult.Cancel)
-                    {
-                        return;
-                    }
-
-                }
-
                 client.RequestSignIn(p1_username_tbx.Text, p1_pw_tbx.Text);
                 islock = true;
                 lock (locker)
@@ -1184,7 +1173,7 @@ namespace client
             p6_2_player5_score.Invoke(new MethodInvoker(delegate { p6_2_player5_score.Visible = false; }));
         }
 
-        // 접속자 리스트 - 문제: 방장만 제대로 출력x(only 자기 이름)
+        // 접속자 리스트
         public override void PlayerList(List<string> playerList, List<Image> imageList)
         {
             int cnt = playerList.Count;
@@ -2162,6 +2151,7 @@ namespace client
 
         #region 친구 목록
 
+
         public override void FriendList(List<string> friendList)
         {
             p8_friend_dgv.Invoke(new MethodInvoker(delegate { p8_friend_dgv.Rows.Clear(); }));
@@ -2171,6 +2161,13 @@ namespace client
                 // 표 출력 예시 : [ (숫자) ] [ ID ] [ 초대하기 버튼 ]
                 p8_friend_dgv.Invoke(new MethodInvoker(delegate { p8_friend_dgv.Rows.Add(i + 1, friendList[i]); }));
             }
+        }
+
+        private void p3_friend_list_btn_Click(object sender, EventArgs e)
+        {
+            client.RequestFirendsList();
+            panel8_friend.Invoke(new MethodInvoker(delegate { panel8_friend.Visible = true; }));
+            panel3_roomList.Invoke(new MethodInvoker(delegate { panel3_roomList.Visible = false; }));
         }
 
         private void p8_back_btn_Click(object sender, EventArgs e)
@@ -2183,13 +2180,6 @@ namespace client
             p3_roomname_label.Visible = false;
             p3_roomname_tbx.Visible = false;
 
-        }
-
-        private void p3_friend_list_btn_Click(object sender, EventArgs e)
-        { 
-            client.RequestFirendsList();
-            panel8_friend.Invoke(new MethodInvoker(delegate { panel8_friend.Visible = true; }));
-            panel3_roomList.Invoke(new MethodInvoker(delegate { panel3_roomList.Visible = false; }));
         }
 
         /// <summary>
@@ -2209,7 +2199,6 @@ namespace client
                         client.RequestJoinFriendRoom(fName);
                     }
 
-                    //ShowMessageBox("1", "1", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
                 if (e.ColumnIndex == p8_dgv_column4.Index)
                 {
@@ -2218,7 +2207,6 @@ namespace client
                     {
                         client.RequestFriendRemove(fName);
                     }
-                    //ShowMessageBox("2", "2", MessageBoxButtons.OK, MessageBoxIcon.None);
                 }
             }
         }
@@ -2240,7 +2228,6 @@ namespace client
 
         public override void FriendRemove(bool sucess)
         {
-            //if(sucess) RequestFriendList 정도 호출하면 될듯
             if (sucess == true)
             {
                 client.RequestFirendsList();
@@ -2252,7 +2239,7 @@ namespace client
             }
         }
 
-        // >>> 친구 추가 하기
+        #region 친구 추가 하기
         private void p4_player1_item_Click(object sender, EventArgs e)
         {
             client.RequestSendFriendRequest(p4_1_player1.Text);
@@ -2278,7 +2265,7 @@ namespace client
             client.RequestSendFriendRequest(p4_1_player5.Text);
         }
 
-
+        #endregion
         public override void SendFriendRequest(bool success)
         {
             // 친구 요청을 보낼 때 없는 사용자이거나 비어 있는 라벨을 클릭해서 친구 요청을 보낸 경우
@@ -2315,9 +2302,6 @@ namespace client
         public override void AcceptFriend(bool success)
         {
             // 친구 요청을 보낸 쪽에서 보여짐
-            /*
-             * if(success == false) 사용자를 찾을 수 없습니다.
-             */
 
             if(success==true)
             {
@@ -2409,7 +2393,7 @@ namespace client
                 p6_2_player_turn_label.Location = new Point(34, 384);
         }
 
-        // 현재 사용자 표시 - 뒷 배경 초록색
+        #region 현재 사용자 표시 - 뒷 배경 초록색
         private void p6_current_player()
         {
             string p_name = p1_username_tbx.Text;
@@ -2469,10 +2453,11 @@ namespace client
                 p6_2_player5_score.BackColor = Color.MediumSeaGreen;
             }
         }
+        #endregion
 
         int turn_cnt = 0;   // 질문 횟수 계산
 
-        // 자동 스크롤
+        #region 자동 스크롤
         private void p5_1_QA_tbx_VisibleChanged(object sender, EventArgs e)
         {
             p5_1_QA_tbx.Invoke(new MethodInvoker(delegate {
@@ -2507,6 +2492,9 @@ namespace client
             }));
    
         }
+
+        #endregion
+
 
         private void p6_2_QA_tbx_VisibleChanged(object sender, EventArgs e)
         {
@@ -2583,6 +2571,7 @@ namespace client
             p4_player3_ballon.Invoke(new MethodInvoker(delegate { p4_player3_ballon.BringToFront(); }));
             p4_player4_ballon.Invoke(new MethodInvoker(delegate { p4_player4_ballon.BringToFront(); }));
             p4_player5_ballon.Invoke(new MethodInvoker(delegate { p4_player5_ballon.BringToFront(); }));
+            
             if (p4_1_player1_ballon.Visible||p4_1_player2_ballon.Visible|| p4_1_player3_ballon.Visible ||
                 p4_1_player4_ballon.Visible || p4_1_player5_ballon.Visible || p4_player1_ballon.Visible ||
                 p4_player2_ballon.Visible || p4_player3_ballon.Visible || p4_player4_ballon.Visible ||
@@ -2610,46 +2599,11 @@ namespace client
 
         private void panel6_2_Answer_Wait_VisibleChanged(object sender, EventArgs e)
         {
-            this.ActiveControl = p6_2_answer_tbx;
-            p6_2_QA_tbx.Enabled = false;
+            this.ActiveControl = p6_2_answer_tbx;       // 커서 포커싱 설정
+            p6_2_QA_tbx.Enabled = false;                // 채팅창 커서 입력 no
         }
 
-        #region image 추가
-        string image_file = string.Empty;
-
-        private string Img_to_string(Image image)
-        {
-            MemoryStream ms=new MemoryStream();
-            image.Save(ms, image.RawFormat);
-            byte[] imgbyte=ms.ToArray();
-            string imgstring=Convert.ToBase64String(imgbyte);
-            return imgstring;
-        }
-        private void p1_img_btn_Click(object sender, EventArgs e)
-        {
-
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
-
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                image_file = ofd.FileName;      // 이미지 이름으로 받아옴
-            }
-            else if (ofd.ShowDialog() == DialogResult.Cancel)
-            {
-                return;
-            }
-            //p4_player1_img.Image = Bitmap.FromFile(image_file);
-            //p4_player1_img.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-        private void MainForm_Shown(object sender, EventArgs e)
-        {
-            TryConnectServer();
-        }
-
-
-        #endregion
-
+       
 
         // 게임 시작 후 질문자가 질문을 기다리는 화면 > 턴x
         public override void QuestionerWait()
@@ -2699,6 +2653,8 @@ namespace client
             }
         }
 
+
+
         private void panel6_Answer_VisibleChanged(object sender, EventArgs e)
         {   //질의응답 창 test를 위해 주석 처리
             p6_solution_label.Invoke(new MethodInvoker(delegate { p6_solution_label.Text = "? ? ?"; }));
@@ -2721,16 +2677,103 @@ namespace client
                 client.RequestSendQuestion("[ " + p1_username_tbx.Text + " ] " + p6_answer_tbx.Text);
             p6_answer_tbx.Text = "";
         }
+
+        private void p1_img_btn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                image_file = ofd.FileName;      // 이미지 이름으로 받아옴
+                Image image = Image.FromFile(image_file);
+                client.RequestSetProfileImage(image);
+            }
+            else if (ofd.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+        }
         #endregion
 
-        //클라이언트에서 리퀘스트를 보내도 해당 요청을 처리하기 전에 서버에서 소켓 연결이 끊겨서 예외 처리로 넘어가게 됨.
-        //그래서 여기서 처리하는 대신 서버 예외처리 하는 부분에서 처리하도록 바꿨어요
-        /*
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        #region 프로필 이미지
+
+        Image myImg;
+        string image_file = string.Empty;
+
+        private string Img_to_string(Image image)
         {
-            client.RequestExitGame();
+            MemoryStream ms = new MemoryStream();
+            image.Save(ms, image.RawFormat);
+            byte[] imgbyte = ms.ToArray();
+            string imgstring = Convert.ToBase64String(imgbyte);
+            return imgstring;
+        }
+        /*
+        private void p1_img_btn_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                image_file = ofd.FileName;      // 이미지 이름으로 받아옴
+            }
+            else if (ofd.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+            //p4_player1_img.Image = Bitmap.FromFile(image_file);
+            //p4_player1_img.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         */
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            TryConnectServer();
+        }
+
+
+        private void p3_profile_btn_Click(object sender, EventArgs e)
+        {
+            client.RequestGetProfileImage();
+            panel3_roomList.Invoke(new MethodInvoker(delegate { panel3_roomList.Visible = false; }));
+            panel9_profile.Invoke(new MethodInvoker(delegate { panel9_profile.Visible = true; }));
+            //p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.Image = myImg; }));
+            //p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.Image = Bitmap.FromFile(image_file); }));
+            p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.SizeMode = PictureBoxSizeMode.StretchImage; }));
+            p9_playerName_label.Invoke(new MethodInvoker(delegate { p9_playerName_label.Text = String.Format("- Player Name : {0}", p1_username_tbx.Text); }));
+        }
+
+        private void p9_back_btn_Click(object sender, EventArgs e)
+        {
+            panel9_profile.Invoke(new MethodInvoker(delegate { panel9_profile.Visible = false; }));
+            panel3_roomList.Invoke(new MethodInvoker(delegate { panel3_roomList.Visible = true; }));
+            p3_roomname_label.Invoke(new MethodInvoker(delegate { p3_roomname_label.Visible = false; }));
+            p3_roomname_tbx.Invoke(new MethodInvoker(delegate { p3_roomname_tbx.Visible = false; }));
+            p3_people_label.Invoke(new MethodInvoker(delegate { p3_people_label.Visible = false; }));
+            p3_people_tbx.Invoke(new MethodInvoker(delegate { p3_people_tbx.Visible = false; }));
+            p3_create_btn.Invoke(new MethodInvoker(delegate { p3_create_btn.Visible = false; }));
+        }
+
+
+        public override void GetProfileImage(Image image)
+        {
+            p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.Image = image; }));
+
+            //Image myimg = 
+            //image_file = image.ToString();
+        }
+
+        private void p9_imgDelete_btn_Click(object sender, EventArgs e)
+        {
+            client.RequestRemoveProfileImage();
+            client.RequestGetProfileImage();
+            //p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.Image = Properties.Resources.blocked; }));
+        }
+        #endregion
+
 
     }
 }
