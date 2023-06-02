@@ -564,9 +564,6 @@ namespace client
             // 모든 정보가 맞을 때, 게임 시작 패널로 넘어감
             if (result == DialogResult.Yes)
             {
-                Image image = Image.FromFile(image_file);
-                client.RequestSendImg(Img_to_string(image));
-                
                 client.RequestSignIn(p1_username_tbx.Text, p1_pw_tbx.Text);
                 islock = true;
                 lock (locker)
@@ -1020,6 +1017,20 @@ namespace client
             p6_player1.Invoke(new MethodInvoker(delegate { p6_player1.Text = ""; }));   // 이름 초기화
             p6_2_player1.Invoke(new MethodInvoker(delegate { p6_2_player1.Text = ""; }));
 
+            //프사 초기화
+            p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Visible = false; }));
+            p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Visible = false; }));
+            //p4_1_player3_img.Invoke(new MethodInvoker(delegate { p4_1_player3_img.Visible = false; }));
+            //p4_1_player4_img.Invoke(new MethodInvoker(delegate { p4_1_player4_img.Visible = false; }));
+            //p4_1_player5_img.Invoke(new MethodInvoker(delegate { p4_1_player5_img.Visible = false; }));
+
+            p4_player1_img.Invoke(new MethodInvoker(delegate { p4_player1_img.Visible = false; }));
+            p4_player2_img.Invoke(new MethodInvoker(delegate { p4_player2_img.Visible = false; }));
+            //p4_player3_img.Invoke(new MethodInvoker(delegate { p4_1_player3_img.Visible = false; }));
+            //p4_player4_img.Invoke(new MethodInvoker(delegate { p4_1_player4_img.Visible = false; }));
+            //p4_player5_img.Invoke(new MethodInvoker(delegate { p4_1_player5_img.Visible = false; }));
+
+
             // player2  
             p4_player2.Invoke(new MethodInvoker(delegate { p4_player2.Text = ""; }));
             p4_player2.Invoke(new MethodInvoker(delegate { p4_player2.ForeColor = Color.Black; }));
@@ -1130,12 +1141,18 @@ namespace client
         }
 
         // 접속자 리스트 - 문제: 방장만 제대로 출력x(only 자기 이름)
-        public override void PlayerList(List<string> playerList)
+        public override void PlayerList(List<string> playerList, List<Image> imageList)
         {
             int cnt = playerList.Count;
             PlayerList_clear();
             if (cnt > 0)
             {
+                //프사
+                p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Visible = true; }));
+                p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Image = imageList[0]; }));
+                p4_player1_img.Invoke(new MethodInvoker(delegate { p4_player1_img.Visible = true; }));
+                p4_player1_img.Invoke(new MethodInvoker(delegate { p4_player1_img.Image = imageList[0]; }));
+
                 p4_player1.Invoke(new MethodInvoker(delegate { p4_player1.Text = playerList[0]; }));        //플레이어
                 p4_1_player1.Invoke(new MethodInvoker(delegate { p4_1_player1.Text = playerList[0]; }));    //방장
                 p5_player1.Invoke(new MethodInvoker(delegate { p5_player1.Text = playerList[0]; }));
@@ -1146,6 +1163,12 @@ namespace client
             }
             if (cnt > 1)
             {
+                //프사
+                p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Visible = true; }));
+                p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Image = imageList[1]; }));
+                p4_player2_img.Invoke(new MethodInvoker(delegate { p4_player2_img.Visible = true; }));
+                p4_player2_img.Invoke(new MethodInvoker(delegate { p4_player2_img.Image = imageList[1]; }));
+
                 // 플레이어
                 p4_player2.Invoke(new MethodInvoker(delegate { p4_player2.Text = playerList[1]; }));
                 p4_player2.Invoke(new MethodInvoker(delegate { p4_player2.BackColor = Color.LightSkyBlue; }));
@@ -1448,14 +1471,14 @@ namespace client
         {
             //client.RequestRoomList();
             //RoomList(serverRoomInfo);
-            client.RequestGetImg();
+            //client.RequestGetImg();
             client.RequestPlayerList(roomname);
             
             
             if (panel4_1_owner_waitRoom.Visible == true)
             {
-                 p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Visible = true; }));
-                p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Visible = true; }));
+                //p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Visible = true; }));
+                //p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Visible = true; }));
 
                 //p4_1_player1_img.Invoke(new MethodInvoker(delegate { p4_1_player1_img.Image = Bitmap.FromFile(image_file); }));
                 //p4_1_player2_img.Invoke(new MethodInvoker(delegate { p4_1_player2_img.Image = Bitmap.FromFile(image_file); }));
@@ -2120,6 +2143,21 @@ namespace client
 
         private void p3_friend_list_btn_Click(object sender, EventArgs e) 
         {
+            //수정 : 일단 테스트 용으로 프사 설정 부분을 넣어둔거. 나중에 프사 설정 버튼 따로 만들어주세요
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = @"D:\";      // 이미지 불러 올 기본 파일
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                image_file = ofd.FileName;      // 이미지 이름으로 받아옴
+                Image image = Image.FromFile(image_file);
+                client.RequestSetProfileImage(image);
+            }
+            else if (ofd.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+
             client.RequestFirendsList();
             panel8_friend.Invoke(new MethodInvoker(delegate { panel8_friend.Visible = true; }));
             panel3_roomList.Invoke(new MethodInvoker(delegate { panel3_roomList.Visible = false; }));

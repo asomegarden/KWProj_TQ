@@ -102,6 +102,15 @@ namespace client
             }
         }
 
+        private string Img_to_string(Image image)
+        {
+            MemoryStream ms = new MemoryStream();
+            image.Save(ms, image.RawFormat);
+            byte[] imgbyte = ms.ToArray();
+            string imgstring = Convert.ToBase64String(imgbyte);
+            return imgstring;
+        }
+
         //Server - chat_server에서 보낸 응답을 처리
         private void ResponseProcess(string msg)
         {
@@ -181,8 +190,23 @@ namespace client
                 // 받아 온 content가 비어있지 않다면, 접속된 유저 이름 가져옴
                 if (string.IsNullOrEmpty(content) == false)
                 {
-                    string[] playerArr = content.Split(',');
-                    parentForm.PlayerList(playerArr.ToList());
+                    string[] lines = content.Split(',');
+                    List<string> playerList = new List<string>();
+                    List<Image> imageList = new List<Image>();
+
+                    for(int i=0; i< lines.Length; i++)
+                    {
+                        string[] line = lines[i].Split(':');
+
+                        playerList.Add(line[0]);
+                        byte[] imgbyte = Convert.FromBase64String(line[1]);
+                        using (MemoryStream ms = new MemoryStream(imgbyte))
+                        {
+                            Image image = Image.FromStream(ms);
+                            imageList.Add(image);
+                        }
+                    }
+                    parentForm.PlayerList(playerList, imageList);
                 }
             }
             else if (header.Equals("SENDFRIENDREQUEST"))
