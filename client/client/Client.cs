@@ -209,6 +209,15 @@ namespace client
                     parentForm.PlayerList(playerList, imageList);
                 }
             }
+            else if (header.Equals("GETPROFILEIMAGE"))
+            {
+                byte[] imgbyte = Convert.FromBase64String(content);
+                using (MemoryStream ms = new MemoryStream(imgbyte))
+                {
+                    Image image = Image.FromStream(ms);
+                    parentForm.GetProfileImage(image);
+                }
+            }
             else if (header.Equals("SENDFRIENDREQUEST"))
             {
                 parentForm.SendFriendRequest(!content.Equals("-1"));

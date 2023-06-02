@@ -548,7 +548,7 @@ namespace ServerProgram
             if (server == null) return false;
             if (profileImgList.FindIndex(user => user.Item1.Equals(server.username)) != -1)
             {
-                RemoveProfileImage(server);
+                RemoveProfileImage(server,true);
             }
 
             profileImgList.Add(new Tuple<string, string>(server.username, byteString));
@@ -559,6 +559,7 @@ namespace ServerProgram
                 server.username + "','" + byteString + "')";
             SQLiteCommand cmd = new SQLiteCommand(query, conn);
             int result = cmd.ExecuteNonQuery();
+            server.SendResponse("GETPROFILEIMAGE", GetProfileImageString(server));
 
             return true;
         }
@@ -566,11 +567,11 @@ namespace ServerProgram
         private string GetProfileImageString(Server server)
         {
             Tuple<string, string> findItem = profileImgList.Find(user => user.Item1.Equals(server.username));
-            if (findItem == null) return null;
+            if (findItem == null) return GetBasicImage();
             else return findItem.Item2;
         }
 
-        private void RemoveProfileImage(Server server)
+        private void RemoveProfileImage(Server server, bool send = false)
         {
             Tuple<string, string> findItem = profileImgList.Find(user => user.Item1.Equals(server.username));
             if(findItem == null) return;
@@ -583,6 +584,13 @@ namespace ServerProgram
             int result = cmd.ExecuteNonQuery();
 
             profileImgList.Remove(findItem);
+            
+            if(send==false)
+            {
+                server.SendResponse("GETPROFILEIMAGE", GetProfileImageString(server));
+            }
+            
+
         }
         #endregion
 
@@ -886,7 +894,6 @@ namespace ServerProgram
             {
                 room.players.ForEach(p => {
                     string userProfileImage = GetProfileImageString(p);
-                    if (userProfileImage == null) userProfileImage = GetBasicImage();
 
                     playerListString += p.username + ":" + userProfileImage + ",";
                     });
