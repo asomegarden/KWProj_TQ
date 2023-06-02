@@ -45,7 +45,6 @@ namespace client
             p1_title_label.Font = font_40;
 
             // p1_1_login
-            p1_img_btn.Font = font_20;
             p1_midTitle_label.Font = font_16;
             p1_username_tbx.Font = font_16;
             p1_username_label.Font = font_14;
@@ -299,7 +298,6 @@ namespace client
         private void p1_1_login_panel_VisibleChanged(object sender, EventArgs e)
         {
             this.ActiveControl = p1_username_tbx;   // 커서 포커스 설정
-            p1_img_btn.Invoke(new MethodInvoker(delegate { p1_img_btn.Visible = true; }));
             p1_signUp_btn.Invoke(new MethodInvoker(delegate { p1_signUp_btn.Visible = true; }));
             p1_login_btn.Invoke(new MethodInvoker(delegate { p1_login_btn.Visible = true; }));
             p2_gameStart_btn.Invoke(new MethodInvoker(delegate { p2_gameStart_btn.Visible = false; }));
