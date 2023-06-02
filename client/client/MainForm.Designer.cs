@@ -261,6 +261,12 @@
             this.p9_profile_img = new System.Windows.Forms.PictureBox();
             this.p9_title_label = new System.Windows.Forms.Label();
             this.p9_back_btn = new MetroSet_UI.Controls.MetroSetButton();
+            this.p4_player3_img = new System.Windows.Forms.PictureBox();
+            this.p4_player4_img = new System.Windows.Forms.PictureBox();
+            this.p4_player5_img = new System.Windows.Forms.PictureBox();
+            this.p4_1_player3_img = new System.Windows.Forms.PictureBox();
+            this.p4_1_player4_img = new System.Windows.Forms.PictureBox();
+            this.p4_1_player5_img = new System.Windows.Forms.PictureBox();
             this.panel1_login_server.SuspendLayout();
             this.p1_1_login_panel.SuspendLayout();
             this.panel2_gameStart.SuspendLayout();
@@ -288,6 +294,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.p8_friend_dgv)).BeginInit();
             this.panel9_profile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p9_profile_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player3_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player4_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player5_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player3_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player4_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player5_img)).BeginInit();
             this.SuspendLayout();
             // 
             // title_label
@@ -1046,9 +1058,12 @@
             // 
             // panel4_player_waitRoom
             // 
-            this.panel4_player_waitRoom.BackColor = System.Drawing.Color.Olive;
+            this.panel4_player_waitRoom.BackColor = System.Drawing.Color.White;
             this.panel4_player_waitRoom.Controls.Add(this.p4_player1_img);
             this.panel4_player_waitRoom.Controls.Add(this.p4_player2_img);
+            this.panel4_player_waitRoom.Controls.Add(this.p4_player3_img);
+            this.panel4_player_waitRoom.Controls.Add(this.p4_player4_img);
+            this.panel4_player_waitRoom.Controls.Add(this.p4_player5_img);
             this.panel4_player_waitRoom.Controls.Add(this.p4_readyDone_btn);
             this.panel4_player_waitRoom.Controls.Add(this.p4_w_state_player5);
             this.panel4_player_waitRoom.Controls.Add(this.p4_w_state_player4);
@@ -1911,7 +1926,10 @@
             // 
             // panel4_1_owner_waitRoom
             // 
-            this.panel4_1_owner_waitRoom.BackColor = System.Drawing.Color.Gray;
+            this.panel4_1_owner_waitRoom.BackColor = System.Drawing.Color.White;
+            this.panel4_1_owner_waitRoom.Controls.Add(this.p4_1_player5_img);
+            this.panel4_1_owner_waitRoom.Controls.Add(this.p4_1_player4_img);
+            this.panel4_1_owner_waitRoom.Controls.Add(this.p4_1_player3_img);
             this.panel4_1_owner_waitRoom.Controls.Add(this.p4_1_player2_img);
             this.panel4_1_owner_waitRoom.Controls.Add(this.p4_1_player1_img);
             this.panel4_1_owner_waitRoom.Controls.Add(this.p4_1_roomInfo_label);
@@ -1948,10 +1966,10 @@
             // p4_1_player2_img
             // 
             this.p4_1_player2_img.Image = global::client.Properties.Resources.blocked1;
-            this.p4_1_player2_img.Location = new System.Drawing.Point(200, 82);
+            this.p4_1_player2_img.Location = new System.Drawing.Point(145, 82);
             this.p4_1_player2_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p4_1_player2_img.Name = "p4_1_player2_img";
-            this.p4_1_player2_img.Size = new System.Drawing.Size(45, 76);
+            this.p4_1_player2_img.Size = new System.Drawing.Size(68, 68);
             this.p4_1_player2_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p4_1_player2_img.TabIndex = 53;
             this.p4_1_player2_img.TabStop = false;
@@ -1959,10 +1977,10 @@
             // p4_1_player1_img
             // 
             this.p4_1_player1_img.Image = global::client.Properties.Resources.blocked;
-            this.p4_1_player1_img.Location = new System.Drawing.Point(200, 165);
+            this.p4_1_player1_img.Location = new System.Drawing.Point(145, 165);
             this.p4_1_player1_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.p4_1_player1_img.Name = "p4_1_player1_img";
-            this.p4_1_player1_img.Size = new System.Drawing.Size(45, 76);
+            this.p4_1_player1_img.Size = new System.Drawing.Size(68, 68);
             this.p4_1_player1_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p4_1_player1_img.TabIndex = 52;
             this.p4_1_player1_img.TabStop = false;
@@ -1980,9 +1998,9 @@
             // 
             this.p4_1_state_player5.BackColor = System.Drawing.Color.LightSkyBlue;
             this.p4_1_state_player5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p4_1_state_player5.Location = new System.Drawing.Point(42, 450);
+            this.p4_1_state_player5.Location = new System.Drawing.Point(42, 445);
             this.p4_1_state_player5.Name = "p4_1_state_player5";
-            this.p4_1_state_player5.Size = new System.Drawing.Size(118, 28);
+            this.p4_1_state_player5.Size = new System.Drawing.Size(63, 28);
             this.p4_1_state_player5.TabIndex = 44;
             this.p4_1_state_player5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.p4_1_state_player5.Visible = false;
@@ -1991,9 +2009,9 @@
             // 
             this.p4_1_state_player4.BackColor = System.Drawing.Color.LightSkyBlue;
             this.p4_1_state_player4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p4_1_state_player4.Location = new System.Drawing.Point(42, 368);
+            this.p4_1_state_player4.Location = new System.Drawing.Point(42, 363);
             this.p4_1_state_player4.Name = "p4_1_state_player4";
-            this.p4_1_state_player4.Size = new System.Drawing.Size(118, 28);
+            this.p4_1_state_player4.Size = new System.Drawing.Size(63, 28);
             this.p4_1_state_player4.TabIndex = 43;
             this.p4_1_state_player4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.p4_1_state_player4.Visible = false;
@@ -2002,9 +2020,9 @@
             // 
             this.p4_1_state_player3.BackColor = System.Drawing.Color.LightSkyBlue;
             this.p4_1_state_player3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p4_1_state_player3.Location = new System.Drawing.Point(42, 286);
+            this.p4_1_state_player3.Location = new System.Drawing.Point(42, 281);
             this.p4_1_state_player3.Name = "p4_1_state_player3";
-            this.p4_1_state_player3.Size = new System.Drawing.Size(118, 28);
+            this.p4_1_state_player3.Size = new System.Drawing.Size(63, 28);
             this.p4_1_state_player3.TabIndex = 42;
             this.p4_1_state_player3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.p4_1_state_player3.Visible = false;
@@ -2013,9 +2031,9 @@
             // 
             this.p4_1_state_player2.BackColor = System.Drawing.Color.LightSkyBlue;
             this.p4_1_state_player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p4_1_state_player2.Location = new System.Drawing.Point(42, 205);
+            this.p4_1_state_player2.Location = new System.Drawing.Point(42, 200);
             this.p4_1_state_player2.Name = "p4_1_state_player2";
-            this.p4_1_state_player2.Size = new System.Drawing.Size(118, 28);
+            this.p4_1_state_player2.Size = new System.Drawing.Size(63, 28);
             this.p4_1_state_player2.TabIndex = 41;
             this.p4_1_state_player2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.p4_1_state_player2.Visible = false;
@@ -2024,9 +2042,9 @@
             // 
             this.p4_1_state_player1.BackColor = System.Drawing.Color.LightCoral;
             this.p4_1_state_player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.p4_1_state_player1.Location = new System.Drawing.Point(43, 128);
+            this.p4_1_state_player1.Location = new System.Drawing.Point(43, 120);
             this.p4_1_state_player1.Name = "p4_1_state_player1";
-            this.p4_1_state_player1.Size = new System.Drawing.Size(118, 28);
+            this.p4_1_state_player1.Size = new System.Drawing.Size(63, 28);
             this.p4_1_state_player1.TabIndex = 40;
             this.p4_1_state_player1.Text = "방장";
             this.p4_1_state_player1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2162,7 +2180,7 @@
             this.p4_1_player5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.p4_1_player5.Location = new System.Drawing.Point(16, 409);
             this.p4_1_player5.Name = "p4_1_player5";
-            this.p4_1_player5.Size = new System.Drawing.Size(171, 76);
+            this.p4_1_player5.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player5.TabIndex = 33;
             this.p4_1_player5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -2173,7 +2191,7 @@
             this.p4_1_player4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.p4_1_player4.Location = new System.Drawing.Point(16, 328);
             this.p4_1_player4.Name = "p4_1_player4";
-            this.p4_1_player4.Size = new System.Drawing.Size(171, 76);
+            this.p4_1_player4.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player4.TabIndex = 32;
             this.p4_1_player4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -2184,7 +2202,7 @@
             this.p4_1_player3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.p4_1_player3.Location = new System.Drawing.Point(16, 248);
             this.p4_1_player3.Name = "p4_1_player3";
-            this.p4_1_player3.Size = new System.Drawing.Size(171, 76);
+            this.p4_1_player3.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player3.TabIndex = 31;
             this.p4_1_player3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -2195,7 +2213,7 @@
             this.p4_1_player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.p4_1_player2.Location = new System.Drawing.Point(16, 165);
             this.p4_1_player2.Name = "p4_1_player2";
-            this.p4_1_player2.Size = new System.Drawing.Size(171, 76);
+            this.p4_1_player2.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player2.TabIndex = 30;
             this.p4_1_player2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -2206,7 +2224,7 @@
             this.p4_1_player1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.p4_1_player1.Location = new System.Drawing.Point(16, 82);
             this.p4_1_player1.Name = "p4_1_player1";
-            this.p4_1_player1.Size = new System.Drawing.Size(171, 76);
+            this.p4_1_player1.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player1.TabIndex = 29;
             this.p4_1_player1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -2216,7 +2234,7 @@
             this.p4_1_player5_ballon.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.p4_1_player5_ballon.Multiline = true;
             this.p4_1_player5_ballon.Name = "p4_1_player5_ballon";
-            this.p4_1_player5_ballon.Size = new System.Drawing.Size(171, 75);
+            this.p4_1_player5_ballon.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player5_ballon.TabIndex = 16;
             this.p4_1_player5_ballon.Visible = false;
             this.p4_1_player5_ballon.VisibleChanged += new System.EventHandler(this.p4_1_player1_ballon_VisibleChanged);
@@ -2227,7 +2245,7 @@
             this.p4_1_player4_ballon.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.p4_1_player4_ballon.Multiline = true;
             this.p4_1_player4_ballon.Name = "p4_1_player4_ballon";
-            this.p4_1_player4_ballon.Size = new System.Drawing.Size(171, 75);
+            this.p4_1_player4_ballon.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player4_ballon.TabIndex = 16;
             this.p4_1_player4_ballon.Visible = false;
             this.p4_1_player4_ballon.VisibleChanged += new System.EventHandler(this.p4_1_player1_ballon_VisibleChanged);
@@ -2238,7 +2256,7 @@
             this.p4_1_player3_ballon.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.p4_1_player3_ballon.Multiline = true;
             this.p4_1_player3_ballon.Name = "p4_1_player3_ballon";
-            this.p4_1_player3_ballon.Size = new System.Drawing.Size(171, 75);
+            this.p4_1_player3_ballon.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player3_ballon.TabIndex = 16;
             this.p4_1_player3_ballon.Visible = false;
             this.p4_1_player3_ballon.VisibleChanged += new System.EventHandler(this.p4_1_player1_ballon_VisibleChanged);
@@ -2249,7 +2267,7 @@
             this.p4_1_player2_ballon.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.p4_1_player2_ballon.Multiline = true;
             this.p4_1_player2_ballon.Name = "p4_1_player2_ballon";
-            this.p4_1_player2_ballon.Size = new System.Drawing.Size(171, 75);
+            this.p4_1_player2_ballon.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player2_ballon.TabIndex = 16;
             this.p4_1_player2_ballon.Visible = false;
             this.p4_1_player2_ballon.VisibleChanged += new System.EventHandler(this.p4_1_player1_ballon_VisibleChanged);
@@ -2260,7 +2278,7 @@
             this.p4_1_player1_ballon.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.p4_1_player1_ballon.Multiline = true;
             this.p4_1_player1_ballon.Name = "p4_1_player1_ballon";
-            this.p4_1_player1_ballon.Size = new System.Drawing.Size(171, 75);
+            this.p4_1_player1_ballon.Size = new System.Drawing.Size(116, 68);
             this.p4_1_player1_ballon.TabIndex = 16;
             this.p4_1_player1_ballon.Visible = false;
             this.p4_1_player1_ballon.VisibleChanged += new System.EventHandler(this.p4_1_player1_ballon_VisibleChanged);
@@ -3172,7 +3190,7 @@
             // 
             // panel6_2_Answer_Wait
             // 
-            this.panel6_2_Answer_Wait.BackColor = System.Drawing.Color.DarkGreen;
+            this.panel6_2_Answer_Wait.BackColor = System.Drawing.Color.White;
             this.panel6_2_Answer_Wait.Controls.Add(this.p6_2_timer_label);
             this.panel6_2_Answer_Wait.Controls.Add(this.p6_2_player5_score);
             this.panel6_2_Answer_Wait.Controls.Add(this.p6_2_buzzer_btn);
@@ -3592,13 +3610,75 @@
             this.p9_back_btn.ThemeName = "MetroLite";
             this.p9_back_btn.Click += new System.EventHandler(this.p9_back_btn_Click);
             // 
+            // p4_player3_img
+            // 
+            this.p4_player3_img.Location = new System.Drawing.Point(139, 236);
+            this.p4_player3_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_player3_img.Name = "p4_player3_img";
+            this.p4_player3_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_player3_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_player3_img.TabIndex = 53;
+            this.p4_player3_img.TabStop = false;
+            // 
+            // p4_player4_img
+            // 
+            this.p4_player4_img.Location = new System.Drawing.Point(139, 318);
+            this.p4_player4_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_player4_img.Name = "p4_player4_img";
+            this.p4_player4_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_player4_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_player4_img.TabIndex = 54;
+            this.p4_player4_img.TabStop = false;
+            // 
+            // p4_player5_img
+            // 
+            this.p4_player5_img.Location = new System.Drawing.Point(139, 399);
+            this.p4_player5_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_player5_img.Name = "p4_player5_img";
+            this.p4_player5_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_player5_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_player5_img.TabIndex = 55;
+            this.p4_player5_img.TabStop = false;
+            // 
+            // p4_1_player3_img
+            // 
+            this.p4_1_player3_img.Image = global::client.Properties.Resources.blocked;
+            this.p4_1_player3_img.Location = new System.Drawing.Point(145, 248);
+            this.p4_1_player3_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_1_player3_img.Name = "p4_1_player3_img";
+            this.p4_1_player3_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_1_player3_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_1_player3_img.TabIndex = 54;
+            this.p4_1_player3_img.TabStop = false;
+            // 
+            // p4_1_player4_img
+            // 
+            this.p4_1_player4_img.Image = global::client.Properties.Resources.blocked;
+            this.p4_1_player4_img.Location = new System.Drawing.Point(145, 328);
+            this.p4_1_player4_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_1_player4_img.Name = "p4_1_player4_img";
+            this.p4_1_player4_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_1_player4_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_1_player4_img.TabIndex = 55;
+            this.p4_1_player4_img.TabStop = false;
+            // 
+            // p4_1_player5_img
+            // 
+            this.p4_1_player5_img.Image = global::client.Properties.Resources.blocked;
+            this.p4_1_player5_img.Location = new System.Drawing.Point(145, 409);
+            this.p4_1_player5_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_1_player5_img.Name = "p4_1_player5_img";
+            this.p4_1_player5_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_1_player5_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_1_player5_img.TabIndex = 56;
+            this.p4_1_player5_img.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 630);
             this.ControlBox = false;
-            this.Controls.Add(this.panel4_player_waitRoom);
             this.Controls.Add(this.panel9_profile);
             this.Controls.Add(this.panel8_friend);
             this.Controls.Add(this.panel7_rank);
@@ -3608,6 +3688,7 @@
             this.Controls.Add(this.panel5_2_Owner_Wait);
             this.Controls.Add(this.panel5_Owner);
             this.Controls.Add(this.panel4_1_owner_waitRoom);
+            this.Controls.Add(this.panel4_player_waitRoom);
             this.Controls.Add(this.panel3_roomList);
             this.Controls.Add(this.p3_title_label);
             this.Controls.Add(this.panel2_gameStart);
@@ -3661,6 +3742,12 @@
             this.panel9_profile.ResumeLayout(false);
             this.panel9_profile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p9_profile_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player3_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player4_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player5_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player3_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player4_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player5_img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3887,5 +3974,11 @@
         private System.Windows.Forms.Label p9_playerName_label;
         private MetroSet_UI.Controls.MetroSetButton p9_img_btn;
         private MetroSet_UI.Controls.MetroSetButton p9_imgDelete_btn;
+        private System.Windows.Forms.PictureBox p4_player3_img;
+        private System.Windows.Forms.PictureBox p4_player4_img;
+        private System.Windows.Forms.PictureBox p4_player5_img;
+        private System.Windows.Forms.PictureBox p4_1_player5_img;
+        private System.Windows.Forms.PictureBox p4_1_player4_img;
+        private System.Windows.Forms.PictureBox p4_1_player3_img;
     }
 }
