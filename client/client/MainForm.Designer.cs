@@ -86,6 +86,9 @@
             this.panel4_player_waitRoom = new System.Windows.Forms.Panel();
             this.p4_player1_img = new System.Windows.Forms.PictureBox();
             this.p4_player2_img = new System.Windows.Forms.PictureBox();
+            this.p4_player3_img = new System.Windows.Forms.PictureBox();
+            this.p4_player4_img = new System.Windows.Forms.PictureBox();
+            this.p4_player5_img = new System.Windows.Forms.PictureBox();
             this.p4_readyDone_btn = new MetroSet_UI.Controls.MetroSetButton();
             this.p4_w_state_player5 = new System.Windows.Forms.Label();
             this.p4_w_state_player4 = new System.Windows.Forms.Label();
@@ -146,6 +149,9 @@
             this.p4_state_player5 = new System.Windows.Forms.Label();
             this.p4_start_btn = new MetroSet_UI.Controls.MetroSetButton();
             this.panel4_1_owner_waitRoom = new System.Windows.Forms.Panel();
+            this.p4_1_player5_img = new System.Windows.Forms.PictureBox();
+            this.p4_1_player4_img = new System.Windows.Forms.PictureBox();
+            this.p4_1_player3_img = new System.Windows.Forms.PictureBox();
             this.p4_1_player2_img = new System.Windows.Forms.PictureBox();
             this.p4_1_player1_img = new System.Windows.Forms.PictureBox();
             this.p4_1_roomInfo_label = new System.Windows.Forms.Label();
@@ -261,12 +267,6 @@
             this.p9_profile_img = new System.Windows.Forms.PictureBox();
             this.p9_title_label = new System.Windows.Forms.Label();
             this.p9_back_btn = new MetroSet_UI.Controls.MetroSetButton();
-            this.p4_player3_img = new System.Windows.Forms.PictureBox();
-            this.p4_player4_img = new System.Windows.Forms.PictureBox();
-            this.p4_player5_img = new System.Windows.Forms.PictureBox();
-            this.p4_1_player3_img = new System.Windows.Forms.PictureBox();
-            this.p4_1_player4_img = new System.Windows.Forms.PictureBox();
-            this.p4_1_player5_img = new System.Windows.Forms.PictureBox();
             this.panel1_login_server.SuspendLayout();
             this.p1_1_login_panel.SuspendLayout();
             this.panel2_gameStart.SuspendLayout();
@@ -275,6 +275,9 @@
             this.panel4_player_waitRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p4_player1_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p4_player2_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player3_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player4_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player5_img)).BeginInit();
             this.p4_1_player5_menu.SuspendLayout();
             this.p4_1_player4_menu.SuspendLayout();
             this.p4_1_player3_menu.SuspendLayout();
@@ -282,6 +285,9 @@
             this.p4_player1_menu.SuspendLayout();
             this.panel6_Answer.SuspendLayout();
             this.panel4_1_owner_waitRoom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player5_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player4_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player3_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p4_1_player2_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p4_1_player1_img)).BeginInit();
             this.panel5_Owner.SuspendLayout();
@@ -294,12 +300,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.p8_friend_dgv)).BeginInit();
             this.panel9_profile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p9_profile_img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_player3_img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_player4_img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_player5_img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player3_img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player4_img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player5_img)).BeginInit();
             this.SuspendLayout();
             // 
             // title_label
@@ -1115,6 +1115,36 @@
             this.p4_player2_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p4_player2_img.TabIndex = 52;
             this.p4_player2_img.TabStop = false;
+            // 
+            // p4_player3_img
+            // 
+            this.p4_player3_img.Location = new System.Drawing.Point(139, 236);
+            this.p4_player3_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_player3_img.Name = "p4_player3_img";
+            this.p4_player3_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_player3_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_player3_img.TabIndex = 53;
+            this.p4_player3_img.TabStop = false;
+            // 
+            // p4_player4_img
+            // 
+            this.p4_player4_img.Location = new System.Drawing.Point(139, 318);
+            this.p4_player4_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_player4_img.Name = "p4_player4_img";
+            this.p4_player4_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_player4_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_player4_img.TabIndex = 54;
+            this.p4_player4_img.TabStop = false;
+            // 
+            // p4_player5_img
+            // 
+            this.p4_player5_img.Location = new System.Drawing.Point(139, 399);
+            this.p4_player5_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_player5_img.Name = "p4_player5_img";
+            this.p4_player5_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_player5_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_player5_img.TabIndex = 55;
+            this.p4_player5_img.TabStop = false;
             // 
             // p4_readyDone_btn
             // 
@@ -1962,6 +1992,39 @@
             this.panel4_1_owner_waitRoom.TabIndex = 21;
             this.panel4_1_owner_waitRoom.Visible = false;
             this.panel4_1_owner_waitRoom.VisibleChanged += new System.EventHandler(this.panel4_1_owner_waitRoom_VisibleChanged);
+            // 
+            // p4_1_player5_img
+            // 
+            this.p4_1_player5_img.Image = global::client.Properties.Resources.blocked;
+            this.p4_1_player5_img.Location = new System.Drawing.Point(145, 409);
+            this.p4_1_player5_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_1_player5_img.Name = "p4_1_player5_img";
+            this.p4_1_player5_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_1_player5_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_1_player5_img.TabIndex = 56;
+            this.p4_1_player5_img.TabStop = false;
+            // 
+            // p4_1_player4_img
+            // 
+            this.p4_1_player4_img.Image = global::client.Properties.Resources.blocked;
+            this.p4_1_player4_img.Location = new System.Drawing.Point(145, 328);
+            this.p4_1_player4_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_1_player4_img.Name = "p4_1_player4_img";
+            this.p4_1_player4_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_1_player4_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_1_player4_img.TabIndex = 55;
+            this.p4_1_player4_img.TabStop = false;
+            // 
+            // p4_1_player3_img
+            // 
+            this.p4_1_player3_img.Image = global::client.Properties.Resources.blocked;
+            this.p4_1_player3_img.Location = new System.Drawing.Point(145, 248);
+            this.p4_1_player3_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p4_1_player3_img.Name = "p4_1_player3_img";
+            this.p4_1_player3_img.Size = new System.Drawing.Size(68, 68);
+            this.p4_1_player3_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.p4_1_player3_img.TabIndex = 54;
+            this.p4_1_player3_img.TabStop = false;
             // 
             // p4_1_player2_img
             // 
@@ -3544,7 +3607,7 @@
             this.p9_img_btn.Style = MetroSet_UI.Enums.Style.Light;
             this.p9_img_btn.StyleManager = null;
             this.p9_img_btn.TabIndex = 26;
-            this.p9_img_btn.Text = "이미지 바꾸기";
+            this.p9_img_btn.Text = "이미지 추가하기";
             this.p9_img_btn.ThemeAuthor = "Narwin";
             this.p9_img_btn.ThemeName = "MetroLite";
             this.p9_img_btn.Click += new System.EventHandler(this.p9_img_btn_Click);
@@ -3610,69 +3673,6 @@
             this.p9_back_btn.ThemeName = "MetroLite";
             this.p9_back_btn.Click += new System.EventHandler(this.p9_back_btn_Click);
             // 
-            // p4_player3_img
-            // 
-            this.p4_player3_img.Location = new System.Drawing.Point(139, 236);
-            this.p4_player3_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.p4_player3_img.Name = "p4_player3_img";
-            this.p4_player3_img.Size = new System.Drawing.Size(68, 68);
-            this.p4_player3_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4_player3_img.TabIndex = 53;
-            this.p4_player3_img.TabStop = false;
-            // 
-            // p4_player4_img
-            // 
-            this.p4_player4_img.Location = new System.Drawing.Point(139, 318);
-            this.p4_player4_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.p4_player4_img.Name = "p4_player4_img";
-            this.p4_player4_img.Size = new System.Drawing.Size(68, 68);
-            this.p4_player4_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4_player4_img.TabIndex = 54;
-            this.p4_player4_img.TabStop = false;
-            // 
-            // p4_player5_img
-            // 
-            this.p4_player5_img.Location = new System.Drawing.Point(139, 399);
-            this.p4_player5_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.p4_player5_img.Name = "p4_player5_img";
-            this.p4_player5_img.Size = new System.Drawing.Size(68, 68);
-            this.p4_player5_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4_player5_img.TabIndex = 55;
-            this.p4_player5_img.TabStop = false;
-            // 
-            // p4_1_player3_img
-            // 
-            this.p4_1_player3_img.Image = global::client.Properties.Resources.blocked;
-            this.p4_1_player3_img.Location = new System.Drawing.Point(145, 248);
-            this.p4_1_player3_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.p4_1_player3_img.Name = "p4_1_player3_img";
-            this.p4_1_player3_img.Size = new System.Drawing.Size(68, 68);
-            this.p4_1_player3_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4_1_player3_img.TabIndex = 54;
-            this.p4_1_player3_img.TabStop = false;
-            // 
-            // p4_1_player4_img
-            // 
-            this.p4_1_player4_img.Image = global::client.Properties.Resources.blocked;
-            this.p4_1_player4_img.Location = new System.Drawing.Point(145, 328);
-            this.p4_1_player4_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.p4_1_player4_img.Name = "p4_1_player4_img";
-            this.p4_1_player4_img.Size = new System.Drawing.Size(68, 68);
-            this.p4_1_player4_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4_1_player4_img.TabIndex = 55;
-            this.p4_1_player4_img.TabStop = false;
-            // 
-            // p4_1_player5_img
-            // 
-            this.p4_1_player5_img.Image = global::client.Properties.Resources.blocked;
-            this.p4_1_player5_img.Location = new System.Drawing.Point(145, 409);
-            this.p4_1_player5_img.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.p4_1_player5_img.Name = "p4_1_player5_img";
-            this.p4_1_player5_img.Size = new System.Drawing.Size(68, 68);
-            this.p4_1_player5_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p4_1_player5_img.TabIndex = 56;
-            this.p4_1_player5_img.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -3714,6 +3714,9 @@
             this.panel4_player_waitRoom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p4_player1_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p4_player2_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player3_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player4_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_player5_img)).EndInit();
             this.p4_1_player5_menu.ResumeLayout(false);
             this.p4_1_player4_menu.ResumeLayout(false);
             this.p4_1_player3_menu.ResumeLayout(false);
@@ -3723,6 +3726,9 @@
             this.panel6_Answer.PerformLayout();
             this.panel4_1_owner_waitRoom.ResumeLayout(false);
             this.panel4_1_owner_waitRoom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player5_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player4_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player3_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p4_1_player2_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p4_1_player1_img)).EndInit();
             this.panel5_Owner.ResumeLayout(false);
@@ -3742,12 +3748,6 @@
             this.panel9_profile.ResumeLayout(false);
             this.panel9_profile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p9_profile_img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_player3_img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_player4_img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_player5_img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player3_img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player4_img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p4_1_player5_img)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
