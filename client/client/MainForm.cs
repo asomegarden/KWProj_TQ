@@ -1014,22 +1014,22 @@ namespace client
             p4_1_state_player4.Invoke(new MethodInvoker(delegate { p4_1_state_player4.Text = "대기 중"; }));
             p4_1_state_player5.Invoke(new MethodInvoker(delegate { p4_1_state_player5.Text = "대기 중"; }));
 
-            if (readyList.Contains(p4_player2.Text)) p4_w_state_player2.Invoke(new MethodInvoker(delegate { p4_w_state_player2.Text = "준비완료"; }));
+            if (readyList.Contains(p4_player2.Text)) p4_w_state_player2.Invoke(new MethodInvoker(delegate { p4_w_state_player2.Text = "준비 완료"; }));
 
-            if (readyList.Contains(p4_player3.Text)) p4_w_state_player3.Invoke(new MethodInvoker(delegate { p4_w_state_player3.Text = "준비완료"; }));
+            if (readyList.Contains(p4_player3.Text)) p4_w_state_player3.Invoke(new MethodInvoker(delegate { p4_w_state_player3.Text = "준비 완료"; }));
 
-            if (readyList.Contains(p4_player4.Text)) p4_w_state_player4.Invoke(new MethodInvoker(delegate { p4_w_state_player4.Text = "준비완료"; }));
+            if (readyList.Contains(p4_player4.Text)) p4_w_state_player4.Invoke(new MethodInvoker(delegate { p4_w_state_player4.Text = "준비 완료"; }));
 
-            if (readyList.Contains(p4_player5.Text)) p4_w_state_player5.Invoke(new MethodInvoker(delegate { p4_w_state_player5.Text = "준비완료"; }));
+            if (readyList.Contains(p4_player5.Text)) p4_w_state_player5.Invoke(new MethodInvoker(delegate { p4_w_state_player5.Text = "준비 완료"; }));
 
             //방장 화면
-            if (readyList.Contains(p4_1_player2.Text)) p4_1_state_player2.Invoke(new MethodInvoker(delegate { p4_1_state_player2.Text = "준비완료"; }));
+            if (readyList.Contains(p4_1_player2.Text)) p4_1_state_player2.Invoke(new MethodInvoker(delegate { p4_1_state_player2.Text = "준비 완료"; }));
 
-            if (readyList.Contains(p4_1_player3.Text)) p4_1_state_player3.Invoke(new MethodInvoker(delegate { p4_1_state_player3.Text = "준비완료"; }));
+            if (readyList.Contains(p4_1_player3.Text)) p4_1_state_player3.Invoke(new MethodInvoker(delegate { p4_1_state_player3.Text = "준비 완료"; }));
 
-            if (readyList.Contains(p4_1_player4.Text)) p4_1_state_player4.Invoke(new MethodInvoker(delegate { p4_1_state_player4.Text = "준비완료"; }));
+            if (readyList.Contains(p4_1_player4.Text)) p4_1_state_player4.Invoke(new MethodInvoker(delegate { p4_1_state_player4.Text = "준비 완료"; }));
 
-            if (readyList.Contains(p4_1_player5.Text)) p4_1_state_player5.Invoke(new MethodInvoker(delegate { p4_1_state_player5.Text = "준비완료"; }));
+            if (readyList.Contains(p4_1_player5.Text)) p4_1_state_player5.Invoke(new MethodInvoker(delegate { p4_1_state_player5.Text = "준비 완료"; }));
         }
 
         // 목록 클리어 > owner화면 & 접속자 화면
