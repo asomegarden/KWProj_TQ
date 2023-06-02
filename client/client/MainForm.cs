@@ -217,7 +217,7 @@ namespace client
             panel9_profile.Font = font_14;
             p9_playerName_label.Font = font_14;
             p9_imgDelete_btn.Font = font_14;
-            p9_imgChange_btn.Font = font_14;
+            p9_img_btn.Font = font_14;
 
             #endregion
         }
@@ -2756,9 +2756,6 @@ namespace client
             client.RequestGetProfileImage();
             panel3_roomList.Invoke(new MethodInvoker(delegate { panel3_roomList.Visible = false; }));
             panel9_profile.Invoke(new MethodInvoker(delegate { panel9_profile.Visible = true; }));
-            //p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.Image = myImg; }));
-            //p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.Image = Bitmap.FromFile(image_file); }));
-            p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.SizeMode = PictureBoxSizeMode.StretchImage; }));
             p9_playerName_label.Invoke(new MethodInvoker(delegate { p9_playerName_label.Text = String.Format("- Player Name : {0}", p1_username_tbx.Text); }));
         }
 
@@ -2777,16 +2774,12 @@ namespace client
         public override void GetProfileImage(Image image)
         {
             p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.Image = image; }));
-
-            //Image myimg = 
-            //image_file = image.ToString();
+            p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.SizeMode = PictureBoxSizeMode.StretchImage; }));
         }
 
         private void p9_imgDelete_btn_Click(object sender, EventArgs e)
         {
             client.RequestRemoveProfileImage();
-
-            //p9_profile_img.Invoke(new MethodInvoker(delegate { p9_profile_img.Image = Properties.Resources.blocked; }));
         }
         #endregion
 
