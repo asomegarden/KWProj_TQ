@@ -16,7 +16,7 @@ UI 디자인은 `MetroFramework` 와 `MetroSetUI`를 사용했습니다.
 - **전귀로** ([GitHub 링크](https://github.com/GRJeon))
 - 박혜주 ([GitHub 링크](https://github.com/daisy0417))
 - 배영현 ([GitHub 링크](https://github.com/Youngbae1126))
-- 이정원 ([GitHub 링크](https://github.com/won31080))
+- 이정원 ([GitHub 링크](https://github.com/asomegarden))
 <br><br>
 
 ## ⚠️ 폰트가 제대로 보이지 않을 경우
